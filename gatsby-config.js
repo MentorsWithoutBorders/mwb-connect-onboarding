@@ -1,8 +1,10 @@
-/** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
-      title: `gatsby`,
-    siteUrl: `https://www.yourdomain.tld`
+      title: ``,
+    siteUrl: `https://www.mentorswithoutborders.net`
   },
-  plugins: ["gatsby-plugin-styled-components"]
+  plugins: [
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-root-import"
+  ]
 };

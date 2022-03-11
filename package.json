@@ -2,7 +2,7 @@
   "name": "mwb_connect_onboarding",
   "version": "1.0.0",
   "private": true,
-  "description": "mwb_connect_onboarding",
+  "description": "MWB Connect Onboarding",
   "author": "Edmond Pruteanu",
   "keywords": [
     "gatsby"
@@ -12,8 +12,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.6",
@@ -24,9 +23,6 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.13",
-    "typescript": "^4.6.2"
+    "gatsby-plugin-root-import": "^2.0.8"
   }
 }
