@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
-export const StyledNavLink = styled(Link)`
+export const StyledNavLink = styled.a`
   color: #008aca;
   text-decoration: underline;
   &:hover {

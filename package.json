@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.6",
+    "embla-carousel-react": "^6.2.0",
     "gatsby": "^4.9.2",
     "gatsby-plugin-styled-components": "^5.9.0",
     "react": "^17.0.1",

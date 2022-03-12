@@ -4,7 +4,7 @@ import { LineBreak } from 'common/styles/common-styles.js';
 import { LogoContainer, Logo, Text, LinksContainer } from './description-styles.js';
 import logo from "images/mwb-logo.png"
 
-export const Description = () => {
+export const Description = ({scrollNext, onClickDownload}) => {
   return (
     <div>
       <LogoContainer>
@@ -18,11 +18,11 @@ export const Description = () => {
         </ol>
       </Text>
       <LinksContainer>
-        <NavLink text="Find out how the students send lesson requests >>"/>
+        <NavLink text="Find out how the students send lesson requests >>" onClick={scrollNext}/>
         <LineBreak />
         or
         <LineBreak />
-        <NavLink text="Download the MWB Connect app >>"/>
+        <NavLink text="Download the MWB Connect app >>" onClick={onClickDownload}/>
       </LinksContainer>
     </div>
   )
