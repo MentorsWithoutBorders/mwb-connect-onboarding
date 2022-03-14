@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Page = styled.main`
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Arial";
   line-height: 1.5;  
 `;

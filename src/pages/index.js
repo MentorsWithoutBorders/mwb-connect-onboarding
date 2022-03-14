@@ -1,7 +1,10 @@
 import React, { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Page, Container, Embla, EmblaContainer, EmblaSlide } from './index-styles.js';
-import { Description } from './description/description.js';
+import { Profile } from './profile/profile.js';
+import { Training } from './training/training.js';
+import { LessonRequest } from './lesson-request/lesson-request.js';
+import { DownloadApp } from './download-app/download-app.js';
 
 const IndexPage = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel()
@@ -17,7 +20,11 @@ const IndexPage = () => {
       }       
     },
     [emblaApi]
-  );  
+  );
+
+  const goToDownload = () => {
+    scrollTo(3);
+  };
 
   return (
     <Page>
@@ -26,11 +33,24 @@ const IndexPage = () => {
         <EmblaContainer>
           <EmblaSlide>
             <Container>
-              <Description scrollNext={scrollNext} onClickDownload={() => scrollTo(2)}></Description>
+              <Profile scrollNext={scrollNext} onClickDownload={goToDownload}></Profile>
             </Container> 
           </EmblaSlide>
-          <EmblaSlide>Slide 2</EmblaSlide>
-          <EmblaSlide>Slide 3</EmblaSlide>
+          <EmblaSlide>
+            <Container>
+              <Training scrollNext={scrollNext} onClickDownload={goToDownload}></Training>
+            </Container> 
+          </EmblaSlide>
+          <EmblaSlide>
+            <Container>
+              <LessonRequest onClickDownload={goToDownload}></LessonRequest>
+            </Container> 
+          </EmblaSlide>
+          <EmblaSlide>
+            <Container>
+              <DownloadApp/>
+            </Container> 
+          </EmblaSlide>          
         </EmblaContainer>
       </Embla>      
     </Page>
