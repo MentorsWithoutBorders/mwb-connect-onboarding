@@ -6,21 +6,10 @@ export const Page = styled.main`
   line-height: 1.5;  
 `;
 
-export const Embla = styled.div`
-  overflow: hidden;
-  padding-top: 100px;
-`;
-
-export const EmblaContainer = styled.div`
-  display: flex;
-  width: 100%;  
-`;
-
-export const EmblaSlide = styled.div`
-  position: relative;
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;    
+export const Slide = styled.div`
+  padding-top: 80px;
+  display: flex !important;
+  justify-content: center;
 `;
 
 export const Container = styled.div`

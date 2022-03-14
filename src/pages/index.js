@@ -1,60 +1,56 @@
-import React, { useCallback } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import { Page, Container, Embla, EmblaContainer, EmblaSlide } from './index-styles.js';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import { Page, Slide, Container } from './index-styles.js';
 import { Profile } from './profile/profile.js';
 import { Training } from './training/training.js';
 import { LessonRequest } from './lesson-request/lesson-request.js';
 import { DownloadApp } from './download-app/download-app.js';
 
-const IndexPage = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel()
-  const scrollNext = useCallback(() => {
-    if (emblaApi) {
-      emblaApi.scrollNext()
-    } 
-  }, [emblaApi])
-  const scrollTo = useCallback(
-    (index) => {
-      if (emblaApi) {
-        emblaApi.scrollTo(index)
-      }       
-    },
-    [emblaApi]
-  );
+export default class IndexPage extends React.Component {
+  render() {
+    const settings = {
+      dots: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
 
-  const goToDownload = () => {
-    scrollTo(3);
-  };
+    const scrollNext = () => {
+      this.slider.slickNext();
+    };       
 
-  return (
-    <Page>
-      <title>MWB Connect Onboarding</title>
-      <Embla ref={emblaRef}>
-        <EmblaContainer>
-          <EmblaSlide>
+    const goToDownload = () => {
+      this.slider.slickGoTo(3);
+    };
+
+    return (
+      <Page>
+        <title>MWB Connect Onboarding</title>
+        <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
+          <Slide>
             <Container>
               <Profile scrollNext={scrollNext} onClickDownload={goToDownload}></Profile>
             </Container> 
-          </EmblaSlide>
-          <EmblaSlide>
+          </Slide>  
+          <Slide>
             <Container>
               <Training scrollNext={scrollNext} onClickDownload={goToDownload}></Training>
             </Container> 
-          </EmblaSlide>
-          <EmblaSlide>
+          </Slide>
+          <Slide>
             <Container>
               <LessonRequest onClickDownload={goToDownload}></LessonRequest>
             </Container> 
-          </EmblaSlide>
-          <EmblaSlide>
+          </Slide>
+          <Slide>
             <Container>
               <DownloadApp/>
             </Container> 
-          </EmblaSlide>          
-        </EmblaContainer>
-      </Embla>      
-    </Page>
-  )
+          </Slide>
+        </Slider>
+      </Page>
+    )
+  }
 }
-
-export default IndexPage
