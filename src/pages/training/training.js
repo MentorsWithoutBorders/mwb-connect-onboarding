@@ -2,14 +2,14 @@ import * as React from 'react'
 import { NavLink } from 'pages/components/NavLink/navlink.js';
 import { LineBreak } from 'common/styles/common-styles.js';
 import { LogoContainer, Logo, Text, TrainingExercisesContainer, LinksContainer } from './training-styles.js';
-import logo from "images/mwb-logo.png"
+import LogoImg from 'images/mwb-logo.png';
 import { TrainingExercise } from './training-exercise.js';
 
 export const Training = ({scrollNext, onClickDownload}) => {
   return (
     <div>
       <LogoContainer>
-        <Logo src={logo} alt="Logo" />
+        <Logo src={LogoImg} alt="Logo" />
       </LogoContainer>
       <Text>
         <p>Apart from sharing with the students their professional knowledge and skills, the mentors are also teaching them how to <b>set very clear and specific professional goals</b> and how to <b>pursue these goals with a lot of patience, joy, and efficiency</b>.</p>
