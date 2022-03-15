@@ -14,7 +14,15 @@ export default class IndexPage extends React.Component {
       infinite: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      afterChange: () => scrollToTop()
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     };
 
     const scrollNext = () => {
