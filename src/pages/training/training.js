@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { NavLink } from 'pages/components/NavLink/navlink.js';
 import { LineBreak, UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { LogoContainer, Logo, Text, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, LinksContainer } from './training-styles.js';
+import { Text, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, LinksContainer } from './training-styles.js';
 import { TrainingExercise } from './training-exercise.js';
-import LogoImg from 'images/mwb-logo.png';
 import GoalImg from 'images/mentor-goal.png';
 import QuizImg from 'images/mentor-quiz.png';
 import StepsImg from 'images/mentor-steps.png';
@@ -12,9 +11,6 @@ import DesktopArrowImg from 'images/desktop-arrow.png';
 export const Training = ({scrollNext, onClickDownload}) => {
   return (
     <div>
-      <LogoContainer>
-        <Logo src={LogoImg} alt="Logo" />
-      </LogoContainer>
       <Text>
         <p>Apart from sharing with the students their professional knowledge and skills, the mentors are also teaching them how to <b>set very clear and specific professional goals</b> and how to <b>pursue these goals with a lot of patience, joy, and efficiency</b>.</p>
         <p>For this purpose, we are teaching <b>3 very simple yet extremely powerful exercises</b>:</p>
@@ -37,7 +33,7 @@ export const Training = ({scrollNext, onClickDownload}) => {
               <AddGoalArrowContainer>
                 <UpLeftArrow src={DesktopArrowImg} alt=""/>
               </AddGoalArrowContainer>
-              <AddGoal>For the purpose of the training, add a medium or long-term goal <u>of your own</u></AddGoal>        
+              <AddGoal>Add a medium or long-term goal <u>of your own</u></AddGoal>        
             </GoalRight>
           </GoalContainer>
           <QuizContainer>

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { NavLink } from 'pages/components/NavLink/navlink.js';
 import { UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { LogoContainer, Logo, Text, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
-import LogoImg from 'images/mwb-logo.png';
+import { Text, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
 import LessonRequestImg from 'images/mentor-lesson-request.png';
 import AcceptLessonRequestImg from 'images/mentor-accept-lesson-request.png';
 import DesktopArrowImg from 'images/desktop-arrow.png';
@@ -10,9 +9,6 @@ import DesktopArrowImg from 'images/desktop-arrow.png';
 export const LessonRequest = ({onClickDownload}) => {
   return (
     <div>
-      <LogoContainer>
-        <Logo src={LogoImg} alt="Logo" />
-      </LogoContainer>
       <Text>
         <p>After you complete the first month of training, the lesson requests that you'll receive from the students will look like this:</p>
         <LessonRequestContainer>

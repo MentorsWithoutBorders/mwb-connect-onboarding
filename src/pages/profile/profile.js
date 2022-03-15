@@ -1,17 +1,13 @@
 import * as React from 'react'
 import { NavLink } from 'pages/components/NavLink/navlink.js';
 import { LineBreak, DownRightArrow, UpRightArrow, DownLeftArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { LogoContainer, Logo, Content, ProfileContainer, ProfileScreen, ProfileLeft, ProfileRight, ChooseField, ChooseFieldArrowContainer,  AddSkills, AddSkillsArrowContainer, AddSubfieldsArrowContainer, AddSubfields, AddAvailabilities, AddAvailabilitiesArrowContainer, LinksContainer } from './profile-styles.js';
-import LogoImg from 'images/mwb-logo.png';
+import { Content, ProfileContainer, ProfileScreen, ProfileLeft, ProfileRight, ChooseField, ChooseFieldArrowContainer,  AddSkills, AddSkillsArrowContainer, AddSubfieldsArrowContainer, AddSubfields, AddAvailabilities, AddAvailabilitiesArrowContainer, LinksContainer } from './profile-styles.js';
 import ProfileImg from 'images/mentor-profile.png';
 import DesktopArrowImg from 'images/desktop-arrow.png';
 
 export const Profile = ({scrollNext, onClickDownload}) => {
   return (
     <div>
-      <LogoContainer>
-        <Logo src={LogoImg} alt="Logo" />
-      </LogoContainer>
       <Content>
         <p>In order to receive lesson requests from the students, you'll have to <b>go to your profile in the MWB Connect app</b> and then do the following:</p>
         <ProfileContainer>
