@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Text = styled.main`
-  color: #666;
   text-align: justify;
   padding-bottom: 30px;
 `;
@@ -39,7 +38,7 @@ export const AddGoalArrowContainer = styled.div`
 
 export const AddGoal = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;
@@ -63,7 +62,7 @@ export const SolveQuizzesArrowContainer = styled.div`
 
 export const SolveQuizzes = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;
@@ -94,7 +93,7 @@ export const AddStepsArrowContainer = styled.div`
 
 export const AddSteps = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;

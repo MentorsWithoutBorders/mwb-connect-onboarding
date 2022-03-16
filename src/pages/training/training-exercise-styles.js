@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const Box = styled.div`
   border: solid 1px #ddd;
   border-radius: 15px;
+  background: white;
   padding: 10px;
+  text-align: left;
+  box-shadow: 1px 1px 2px 1px #ccc;
 `;
 
 export const Title = styled.div`

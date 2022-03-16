@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Text = styled.div`
-  color: #666;
   text-align: center;
   padding: 30px;
 `;

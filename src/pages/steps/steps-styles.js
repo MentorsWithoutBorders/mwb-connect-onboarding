@@ -12,7 +12,7 @@ export const Logo = styled.img`
 
 export const ArrowsContainer = styled.div`
   position: absolute;
-  width: 99%;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -26,7 +26,7 @@ export const Arrow = styled.img`
 export const StepsContainer = styled.div`
   position: absolute;
   z-index: 1;
-  width: 99%;  
+  width: 100%;  
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  color: #666;
   text-align: justify;
   padding-bottom: 30px;
 `;
@@ -25,6 +24,7 @@ export const ProfileRight = styled.div`
 
 export const ChooseField = styled.div`
   width: 200px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   padding-bottom: 5px;
@@ -39,7 +39,7 @@ export const ChooseFieldArrowContainer = styled.div`
 
 export const AddSkills = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;
@@ -53,7 +53,7 @@ export const AddSkillsArrowContainer = styled.div`
 
 export const AddSubfields = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 85px;
 `;
@@ -66,7 +66,7 @@ export const AddSubfieldsArrowContainer = styled.div`
 
 export const AddAvailabilities = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;

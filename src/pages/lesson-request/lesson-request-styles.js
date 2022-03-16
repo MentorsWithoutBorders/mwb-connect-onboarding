@@ -11,7 +11,6 @@ export const Logo = styled.img`
 `;
 
 export const Text = styled.div`
-  color: #666;
   text-align: justify;
   padding-bottom: 30px;
 `;
@@ -44,7 +43,7 @@ export const RequestArrowContainer = styled.div`
 
 export const Request = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;
@@ -68,7 +67,7 @@ export const AcceptRequestArrowContainer = styled.div`
 
 export const AcceptRequest = styled.div`
   width: 200px;
-  font-weight: bold;
+  font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
 `;

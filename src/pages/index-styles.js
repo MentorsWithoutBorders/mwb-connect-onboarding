@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Page = styled.main`
-  font-size: 14px;
-  font-family: "Arial";
-  line-height: 1.5;  
+  background: radial-gradient(#03378C, #01112b);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #ccc;
 `;
 
 export const Slide = styled.div`
