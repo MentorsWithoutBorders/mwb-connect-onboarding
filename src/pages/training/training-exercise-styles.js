@@ -7,11 +7,12 @@ export const Box = styled.div`
 `;
 
 export const Title = styled.div`
+  padding-bottom: 10px;
   text-align: center;
-  color: #017ba3;
+  color: #f45101;
   font-size: 13px;
   font-weight: bold;
-  padding-bottom: 10px;
+  text-decoration: underline;
 `;
 
 export const Text = styled.div`

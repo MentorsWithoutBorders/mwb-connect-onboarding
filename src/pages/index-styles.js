@@ -7,7 +7,6 @@ export const Page = styled.main`
 `;
 
 export const Slide = styled.div`
-  padding-top: 80px;
   display: flex !important;
   justify-content: center;
 `;

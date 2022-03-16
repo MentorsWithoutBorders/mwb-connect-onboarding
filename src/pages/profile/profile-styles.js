@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Content = styled.main`
+export const Content = styled.div`
   color: #666;
   text-align: justify;
   padding-bottom: 30px;

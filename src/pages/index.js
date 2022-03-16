@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { Page, Slide, Container } from './index-styles.js';
+import { Steps } from './steps/steps.js';
 import { Profile } from './profile/profile.js';
 import { Training } from './training/training.js';
 import { LessonRequest } from './lesson-request/lesson-request.js';
@@ -27,7 +28,19 @@ export default class IndexPage extends React.Component {
 
     const scrollNext = () => {
       this.slider.slickNext();
-    };       
+    };
+    
+    const goToProfile = () => {
+      this.slider.slickGoTo(0);
+    };
+
+    const goToTraining = () => {
+      this.slider.slickGoTo(1);
+    };
+
+    const goToLessonRequest = () => {
+      this.slider.slickGoTo(2);
+    };     
 
     const goToDownload = () => {
       this.slider.slickGoTo(3);
@@ -35,6 +48,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Page>
+        <Steps goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
         <title>MWB Connect Onboarding</title>
         <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
           <Slide>
