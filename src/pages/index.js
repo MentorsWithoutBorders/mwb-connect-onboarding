@@ -21,8 +21,21 @@ export default class IndexPage extends React.Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      onSwipe: (direction) => setActiveStepOnScroll(direction),
       afterChange: (index) => scrollToTop(index)
     };
+
+    const setActiveStepOnScroll = (direction) => {
+      if (direction === 'left') {
+        if (this.state.activeStep < constants.MENTOR_DOWNLOAD_APP) {
+          setActiveStep(this.state.activeStep + 1);
+        }
+      } else {
+        if (this.state.activeStep > constants.MENTOR_PROFILE) {
+          setActiveStep(this.state.activeStep - 1);
+        }        
+      }
+    };    
 
     const setActiveStep = (index) => {
       this.setState({activeStep: index});
@@ -37,9 +50,7 @@ export default class IndexPage extends React.Component {
     };
 
     const scrollNext = () => {
-      if (this.state.activeStep < constants.MENTOR_DOWNLOAD_APP) {
-        setActiveStep(this.state.activeStep + 1);
-      }
+      setActiveStepOnScroll('left');
       this.slider.slickNext();
     };
     
