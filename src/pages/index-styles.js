@@ -7,6 +7,7 @@ export const Page = styled.main`
 `;
 
 export const Slide = styled.div`
+  margin-top: 130px;
   display: flex !important;
   justify-content: center;
 `;

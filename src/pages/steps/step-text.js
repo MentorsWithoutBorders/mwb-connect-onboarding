@@ -1,10 +1,12 @@
 import * as React from 'react'
-import { TextContainer, Number, Text } from './step-text-styles.js';
+import { TextContainer, NumberContainer, Number, Text } from './step-text-styles.js';
 
 export const StepText = ({number, text, isActive}) => {
   return (
     <TextContainer>
-      <Number>{number}</Number>
+      <NumberContainer active={isActive}>
+        <Number active={isActive}>{number}</Number>
+      </NumberContainer>
       <Text active={isActive}>{text}</Text>
     </TextContainer>
   )

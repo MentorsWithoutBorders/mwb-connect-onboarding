@@ -10,7 +10,7 @@ export const Logo = styled.img`
   height: 70px;
 `;
 
-export const Text = styled.main`
+export const Text = styled.div`
   color: #666;
   text-align: justify;
   padding-bottom: 30px;

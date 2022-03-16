@@ -76,8 +76,8 @@ export default class IndexPage extends React.Component {
 
     return (
       <Page>
-        <Steps activeStep={this.state.activeStep} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
         <title>MWB Connect Onboarding</title>
+        <Steps activeStep={this.state.activeStep} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
         <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
           <Slide>
             <Container>
