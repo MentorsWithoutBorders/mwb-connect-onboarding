@@ -14,4 +14,8 @@ export const Number = styled.div`
 export const Text = styled.div`
   font-size: 12px;
   color: #999;
+
+  ${({ active }) => active && `
+    color: #f45101;
+  `}  
 `;

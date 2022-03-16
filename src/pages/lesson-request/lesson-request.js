@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink } from 'pages/components/NavLink/navlink.js';
+import { NavLink } from 'components/NavLink/navlink.js';
 import { UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Text, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
 import LessonRequestImg from 'images/mentor-lesson-request.png';

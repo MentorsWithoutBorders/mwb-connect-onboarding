@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink } from 'pages/components/NavLink/navlink.js';
+import { NavLink } from 'components/NavLink/navlink.js';
 import { LineBreak, UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Text, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, LinksContainer } from './training-styles.js';
 import { TrainingExercise } from './training-exercise.js';
@@ -17,13 +17,13 @@ export const Training = ({scrollNext, onClickDownload}) => {
         <TrainingExercisesContainer>
           <TrainingExercise 
             title = 'Mental process goal/steps'
-            text = 'which helps our students generate a continuous stream of ideas, energy, and confidence channeled towards their goals.'/>
+            text = {<span>which helps our students generate a continuous stream of <b>ideas, energy, and confidence</b> channeled towards their goals.</span>}/>
           <TrainingExercise 
-            title = 'Quick and deep relaxation methods'
-            text = 'which allow our students to transition from any negative state (e.g. impatience, frustration, discouragement, worry, stress, etc.) to a very pleasant, relaxed state.'/>
+            title = 'Quick and deep relaxation method'
+            text = {<span>which allow our students to transition from any negative state (e.g. impatience, frustration, discouragement, worry, stress, etc.) to <b>a very pleasant, relaxed state.</b></span>}/>
           <TrainingExercise 
             title = 'Super-focus method'
-            text = 'which allows our students to immerse themselves more and more in each and every step that they are taking.'/>          
+            text = {<span>which allows our students to <b>immerse themselves more and more</b> in each and every step that they are taking.</span>}/>          
         </TrainingExercisesContainer>
         <p>In order to explain these 3 exercises efficiently to your students, we will kindly ask you to <b>practice them for 1 month</b> in the following way:</p>
         <TrainingContainer>

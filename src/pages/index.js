@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { Page, Slide, Container } from './index-styles.js';
+import * as constants from 'utils/constants.js';
 import { Steps } from './steps/steps.js';
 import { Profile } from './profile/profile.js';
 import { Training } from './training/training.js';
@@ -9,6 +10,10 @@ import { LessonRequest } from './lesson-request/lesson-request.js';
 import { DownloadApp } from './download-app/download-app.js';
 
 export default class IndexPage extends React.Component {
+  state = {
+    activeStep: constants.MENTOR_PROFILE
+  }
+
   render() {
     const settings = {
       dots: false,
@@ -16,10 +21,15 @@ export default class IndexPage extends React.Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      afterChange: () => scrollToTop()
+      afterChange: (index) => scrollToTop(index)
     };
 
-    const scrollToTop = () => {
+    const setActiveStep = (index) => {
+      this.setState({activeStep: index});
+    };
+
+    const scrollToTop = (index) => {
+      setActiveStep(index);
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -27,28 +37,35 @@ export default class IndexPage extends React.Component {
     };
 
     const scrollNext = () => {
+      if (this.state.activeStep < constants.MENTOR_DOWNLOAD_APP) {
+        setActiveStep(this.state.activeStep + 1);
+      }
       this.slider.slickNext();
     };
     
     const goToProfile = () => {
-      this.slider.slickGoTo(0);
+      setActiveStep(constants.MENTOR_PROFILE);
+      this.slider.slickGoTo(constants.MENTOR_PROFILE);
     };
 
     const goToTraining = () => {
-      this.slider.slickGoTo(1);
+      setActiveStep(constants.MENTOR_TRAINING);
+      this.slider.slickGoTo(constants.MENTOR_TRAINING);
     };
 
     const goToLessonRequest = () => {
-      this.slider.slickGoTo(2);
+      setActiveStep(constants.MENTOR_LESSON_REQUEST);
+      this.slider.slickGoTo(constants.MENTOR_LESSON_REQUEST);
     };     
 
     const goToDownload = () => {
-      this.slider.slickGoTo(3);
+      setActiveStep(constants.MENTOR_DOWNLOAD_APP);
+      this.slider.slickGoTo(constants.MENTOR_DOWNLOAD_APP);
     };
 
     return (
       <Page>
-        <Steps goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
+        <Steps activeStep={this.state.activeStep} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
         <title>MWB Connect Onboarding</title>
         <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
           <Slide>

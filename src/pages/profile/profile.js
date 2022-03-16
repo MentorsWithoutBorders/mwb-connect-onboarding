@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink } from 'pages/components/NavLink/navlink.js';
+import { NavLink } from 'components/NavLink/navlink.js';
 import { LineBreak, DownRightArrow, UpRightArrow, DownLeftArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Content, ProfileContainer, ProfileScreen, ProfileLeft, ProfileRight, ChooseField, ChooseFieldArrowContainer,  AddSkills, AddSkillsArrowContainer, AddSubfieldsArrowContainer, AddSubfields, AddAvailabilities, AddAvailabilitiesArrowContainer, LinksContainer } from './profile-styles.js';
 import ProfileImg from 'images/mentor-profile.png';
