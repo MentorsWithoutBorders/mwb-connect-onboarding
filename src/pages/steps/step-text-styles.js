@@ -13,7 +13,7 @@ export const NumberContainer = styled.div`
   width: 19px;
   height: 19px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ddd;
 
   ${({ active }) => active && `
     background-color: #f45101;

@@ -5,6 +5,10 @@ export const Content = styled.div`
   padding-bottom: 30px;
 `;
 
+export const TopText = styled.div`
+  margin-bottom: 30px;
+`;
+
 export const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;

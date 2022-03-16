@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { NavLink } from 'components/NavLink/navlink.js';
 import { LineBreak, DownRightArrow, UpRightArrow, DownLeftArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { Content, ProfileContainer, ProfileScreen, ProfileLeft, ProfileRight, ChooseField, ChooseFieldArrowContainer,  AddSkills, AddSkillsArrowContainer, AddSubfieldsArrowContainer, AddSubfields, AddAvailabilities, AddAvailabilitiesArrowContainer, LinksContainer } from './profile-styles.js';
+import { Content, TopText, ProfileContainer, ProfileScreen, ProfileLeft, ProfileRight, ChooseField, ChooseFieldArrowContainer,  AddSkills, AddSkillsArrowContainer, AddSubfieldsArrowContainer, AddSubfields, AddAvailabilities, AddAvailabilitiesArrowContainer, LinksContainer } from './profile-styles.js';
 import ProfileImg from 'images/mentor-profile.png';
 import DesktopArrowImg from 'images/desktop-arrow.png';
 
@@ -9,7 +9,7 @@ export const Profile = ({scrollNext, onClickDownload}) => {
   return (
     <div>
       <Content>
-        <p>In order to receive lesson requests from the students, you'll have to <b>go to your profile in the MWB Connect app</b> and then do the following:</p>
+        <TopText>In order to receive lesson requests from the students, you'll have to <b>go to your profile in the MWB Connect app</b> and then do the following:</TopText>
         <ProfileContainer>
           <ProfileLeft>
             <ChooseField>Choose your field</ChooseField>
@@ -35,7 +35,7 @@ export const Profile = ({scrollNext, onClickDownload}) => {
         </ProfileContainer>       
       </Content>     
       <LinksContainer>
-        <NavLink text="Find out more about the first month of training >>" onClick={scrollNext}/>
+        <NavLink text="First month of training >>" onClick={scrollNext}/>
         <LineBreak />
         or
         <LineBreak />

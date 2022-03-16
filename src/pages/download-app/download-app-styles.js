@@ -12,5 +12,5 @@ export const DownloadContainer = styled.div`
 `;
 
 export const Download = styled.img`
-  width: 250px;
+  width: 170px;
 `;

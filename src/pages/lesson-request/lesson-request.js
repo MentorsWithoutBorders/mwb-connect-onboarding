@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { NavLink } from 'components/NavLink/navlink.js';
 import { UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { Text, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
+import { Text, TopText, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
 import LessonRequestImg from 'images/mentor-lesson-request.png';
 import AcceptLessonRequestImg from 'images/mentor-accept-lesson-request.png';
 import DesktopArrowImg from 'images/desktop-arrow.png';
@@ -10,7 +10,7 @@ export const LessonRequest = ({onClickDownload}) => {
   return (
     <div>
       <Text>
-        <p>After you complete the first month of training, the lesson requests that you'll receive from the students will look like this:</p>
+        <TopText>After you complete the first month of training, the lesson requests that you'll receive from the students will look like this:</TopText>
         <LessonRequestContainer>
           <RequestContainer>
             <RequestScreen src={LessonRequestImg} alt="Lesson request"/>

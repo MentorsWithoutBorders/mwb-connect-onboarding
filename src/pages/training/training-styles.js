@@ -5,6 +5,10 @@ export const Text = styled.main`
   padding-bottom: 30px;
 `;
 
+export const TopText = styled.div`
+  margin-bottom: 30px;
+`;
+
 export const TrainingExercisesContainer = styled.div`
   display: flex;
   gap: 15px;
@@ -100,7 +104,8 @@ export const AddSteps = styled.div`
 
 export const LinksContainer = styled.div`
   display: flex;
-  justify-content: center;
   flex-flow: row wrap;
+  justify-content: center;
   align-content: space-between;
+  padding-bottom: 50px;
 `;

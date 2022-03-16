@@ -15,6 +15,10 @@ export const Text = styled.div`
   padding-bottom: 30px;
 `;
 
+export const TopText = styled.div`
+  margin-bottom: 30px;
+`;
+
 export const LessonRequestContainer = styled.div`
   display: flex;
   flex-direction: column;
