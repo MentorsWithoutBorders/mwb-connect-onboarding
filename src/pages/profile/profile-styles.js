@@ -12,6 +12,7 @@ export const TopText = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 `;
 
 export const ProfileScreen = styled.img`

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink } from 'components/NavLink/navlink.js';
+import { ActionButton } from 'components/ActionButton/action-button.js';
 import { LineBreak, UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Text, TopText, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, LinksContainer } from './training-styles.js';
 import { TrainingExercise } from './training-exercise.js';
@@ -19,8 +19,8 @@ export const Training = ({scrollNext, onClickDownload}) => {
             title = 'Mental process goal/steps'
             text = {<span>which helps our students generate a continuous stream of <b>ideas, energy, and confidence</b> channeled towards their goals.</span>}/>
           <TrainingExercise 
-            title = 'Quick and deep relaxation method'
-            text = {<span>which allows our students to transition from any negative state (e.g. impatience, frustration, discouragement, worry, stress, etc.) to <b>a very pleasant, relaxed state.</b></span>}/>
+            title = 'Quick and deep relaxation methods'
+            text = {<span>which allow our students to transition from any negative state (e.g. impatience, frustration, discouragement, worry, stress, etc.) to <b>a very pleasant, relaxed state.</b></span>}/>
           <TrainingExercise 
             title = 'Super-focus method'
             text = {<span>which allows our students to <b>immerse themselves more and more</b> in each and every step that they are taking.</span>}/>          
@@ -57,11 +57,11 @@ export const Training = ({scrollNext, onClickDownload}) => {
         </TrainingContainer>          
       </Text>     
       <LinksContainer>
-        <NavLink text="Accepting lesson requests >>" onClick={scrollNext}/>
+        <ActionButton text="Find out more about how to accept lesson requests >>" onClick={scrollNext}/>
         <LineBreak />
         or
         <LineBreak />
-        <NavLink text="Download the MWB Connect app >>" onClick={onClickDownload}/>
+        <ActionButton text="Download the MWB Connect app >>" onClick={onClickDownload}/>
       </LinksContainer>
     </div>
   )

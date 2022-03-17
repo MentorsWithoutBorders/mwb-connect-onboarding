@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink } from 'components/NavLink/navlink.js';
+import { ActionButton } from 'components/ActionButton/action-button.js';
 import { UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Text, TopText, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
 import LessonRequestImg from 'images/mentor-lesson-request.png';
@@ -33,7 +33,7 @@ export const LessonRequest = ({onClickDownload}) => {
         </LessonRequestContainer> 
       </Text>
       <LinksContainer>
-        <NavLink text="Download the MWB Connect app >>" onClick={onClickDownload}/>
+        <ActionButton text="Download the MWB Connect app >>" onClick={onClickDownload}/>
       </LinksContainer>
     </div>
   )

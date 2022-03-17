@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink } from 'components/NavLink/navlink.js';
+import { ActionButton } from 'components/ActionButton/action-button.js';
 import { LineBreak, DownRightArrow, UpRightArrow, DownLeftArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Content, TopText, ProfileContainer, ProfileScreen, ProfileLeft, ProfileRight, ChooseField, ChooseFieldArrowContainer,  AddSkills, AddSkillsArrowContainer, AddSubfieldsArrowContainer, AddSubfields, AddAvailabilities, AddAvailabilitiesArrowContainer, LinksContainer } from './profile-styles.js';
 import ProfileImg from 'images/mentor-profile.png';
@@ -35,11 +35,11 @@ export const Profile = ({scrollNext, onClickDownload}) => {
         </ProfileContainer>       
       </Content>     
       <LinksContainer>
-        <NavLink text="First month of training >>" onClick={scrollNext}/>
+        <ActionButton text="Find out more about the first month of training >>" onClick={scrollNext}/>
         <LineBreak />
         or
         <LineBreak />
-        <NavLink text="Download the MWB Connect app >>" onClick={onClickDownload}/>
+        <ActionButton text="Download the MWB Connect app >>" onClick={onClickDownload}/>
       </LinksContainer>
     </div>
   )
