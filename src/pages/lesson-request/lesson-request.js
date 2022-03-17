@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ActionButton } from 'components/ActionButton/action-button.js';
 import { UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { Text, TopText, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, LinksContainer } from './lesson-request-styles.js';
+import { Text, TopText, LessonRequestContainer, RequestContainer, RequestScreen, RequestRight, RequestArrowContainer, Request, AcceptRequestContainer, AcceptRequestLeft, AcceptRequest, AcceptRequestArrowContainer, AcceptRequestScreen, ButtonsContainer } from './lesson-request-styles.js';
 import LessonRequestImg from 'images/mentor-lesson-request.png';
 import AcceptLessonRequestImg from 'images/mentor-accept-lesson-request.png';
 import DesktopArrowImg from 'images/desktop-arrow.png';
@@ -32,9 +32,9 @@ export const LessonRequest = ({onClickDownload}) => {
           </AcceptRequestContainer>       
         </LessonRequestContainer> 
       </Text>
-      <LinksContainer>
+      <ButtonsContainer>
         <ActionButton text="Download the MWB Connect app >>" onClick={onClickDownload}/>
-      </LinksContainer>
+      </ButtonsContainer>
     </div>
   )
 }

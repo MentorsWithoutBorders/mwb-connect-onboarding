@@ -102,7 +102,7 @@ export const AddSteps = styled.div`
   padding-bottom: 5px;
 `;
 
-export const LinksContainer = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

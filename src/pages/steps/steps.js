@@ -13,7 +13,7 @@ import LessonRequestInactiveIcon from 'images/lesson-request-inactive-icon.png';
 import DownloadAppActiveIcon from 'images/download-app-active-icon.png';
 import DownloadAppInactiveIcon from 'images/download-app-inactive-icon.png';
 
-export const Steps = ({activeStep, goToProfile, goToTraining, goToLessonRequest, goToDownload}) => {
+export const Steps = ({activeStep, goToIntroduction, goToProfile, goToTraining, goToLessonRequest, goToDownload}) => {
   return (
     <div>
       <LogoContainer>
@@ -23,23 +23,28 @@ export const Steps = ({activeStep, goToProfile, goToTraining, goToLessonRequest,
         <Arrow src={ArrowImg}/>
         <Arrow src={ArrowImg}/>
         <Arrow src={ArrowImg}/>
+        <Arrow src={ArrowImg}/>
       </ArrowsContainer>      
       <StepsContainer>
+        <StepContainer onClick={goToIntroduction}>
+          <Icon src={activeStep === constants.MENTOR_INTRODUCTION ? ProfileActiveIcon : ProfileInactiveIcon} alt="Introduction"/>
+          <StepText number='1' text='Introduction' isActive={activeStep === constants.MENTOR_INTRODUCTION}/>
+        </StepContainer>        
         <StepContainer onClick={goToProfile}>
           <Icon src={activeStep === constants.MENTOR_PROFILE ? ProfileActiveIcon : ProfileInactiveIcon} alt="Profile"/>
-          <StepText number='1' text='Profile' isActive={activeStep === constants.MENTOR_PROFILE}/>
+          <StepText number='2' text='Profile' isActive={activeStep === constants.MENTOR_PROFILE}/>
         </StepContainer>
         <StepContainer onClick={goToTraining}>
           <Icon src={activeStep === constants.MENTOR_TRAINING ? TrainingActiveIcon : TrainingInactiveIcon} alt="Training"/>
-          <StepText number='2' text='Training' isActive={activeStep === constants.MENTOR_TRAINING}/>
+          <StepText number='3' text='Training' isActive={activeStep === constants.MENTOR_TRAINING}/>
         </StepContainer>
         <StepContainer onClick={goToLessonRequest}>
           <Icon src={activeStep === constants.MENTOR_LESSON_REQUEST ? LessonRequestActiveIcon : LessonRequestInactiveIcon} alt="Lesson request"/>
-          <StepText number='3' text='Lesson request' isActive={activeStep === constants.MENTOR_LESSON_REQUEST}/>
+          <StepText number='4' text='Lesson request' isActive={activeStep === constants.MENTOR_LESSON_REQUEST}/>
         </StepContainer>
         <StepContainer onClick={goToDownload}>
           <Icon src={activeStep === constants.MENTOR_DOWNLOAD_APP ? DownloadAppActiveIcon : DownloadAppInactiveIcon} alt="Download app"/>
-          <StepText number='4' text='Download app' isActive={activeStep === constants.MENTOR_DOWNLOAD_APP}/>
+          <StepText number='5' text='Download app' isActive={activeStep === constants.MENTOR_DOWNLOAD_APP}/>
         </StepContainer>
       </StepsContainer>    
     </div>

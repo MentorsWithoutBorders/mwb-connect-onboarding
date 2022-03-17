@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ActionButton } from 'components/ActionButton/action-button.js';
 import { LineBreak, UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
-import { Text, TopText, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, LinksContainer } from './training-styles.js';
+import { Text, TopText, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, ButtonsContainer } from './training-styles.js';
 import { TrainingExercise } from './training-exercise.js';
 import GoalImg from 'images/mentor-goal.png';
 import QuizImg from 'images/mentor-quiz.png';
@@ -56,13 +56,13 @@ export const Training = ({scrollNext, onClickDownload}) => {
           </StepsContainer>          
         </TrainingContainer>          
       </Text>     
-      <LinksContainer>
+      <ButtonsContainer>
         <ActionButton text="Find out more about how to accept lesson requests >>" onClick={scrollNext}/>
         <LineBreak />
         or
         <LineBreak />
         <ActionButton text="Download the MWB Connect app >>" onClick={onClickDownload}/>
-      </LinksContainer>
+      </ButtonsContainer>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import { Page, Slide, Container } from './index-styles.js';
 import * as constants from 'utils/constants.js';
 import { Steps } from './steps/steps.js';
+import { Introduction } from './introduction/introduction.js';
 import { Profile } from './profile/profile.js';
 import { Training } from './training/training.js';
 import { LessonRequest } from './lesson-request/lesson-request.js';
@@ -11,7 +12,7 @@ import { DownloadApp } from './download-app/download-app.js';
 
 export default class IndexPage extends React.Component {
   state = {
-    activeStep: constants.MENTOR_PROFILE
+    activeStep: constants.MENTOR_INTRODUCTION
   }
 
   render() {
@@ -31,7 +32,7 @@ export default class IndexPage extends React.Component {
           setActiveStep(this.state.activeStep + 1);
         }
       } else {
-        if (this.state.activeStep > constants.MENTOR_PROFILE) {
+        if (this.state.activeStep > constants.MENTOR_INTRODUCTION) {
           setActiveStep(this.state.activeStep - 1);
         }        
       }
@@ -53,6 +54,11 @@ export default class IndexPage extends React.Component {
       setActiveStepOnScroll('left');
       this.slider.slickNext();
     };
+
+    const goToIntroduction = () => {
+      setActiveStep(constants.MENTOR_INTRODUCTION);
+      this.slider.slickGoTo(constants.MENTOR_INTRODUCTION);
+    };    
     
     const goToProfile = () => {
       setActiveStep(constants.MENTOR_PROFILE);
@@ -77,21 +83,26 @@ export default class IndexPage extends React.Component {
     return (
       <Page>
         <title>MWB Connect Onboarding</title>
-        <Steps activeStep={this.state.activeStep} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
+        <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
         <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
           <Slide>
             <Container>
-              <Profile scrollNext={scrollNext} onClickDownload={goToDownload}></Profile>
+              <Introduction scrollNext={scrollNext}/>
+            </Container> 
+          </Slide>            
+          <Slide>
+            <Container>
+              <Profile scrollNext={scrollNext} onClickDownload={goToDownload}/>
             </Container> 
           </Slide>  
           <Slide>
             <Container>
-              <Training scrollNext={scrollNext} onClickDownload={goToDownload}></Training>
+              <Training scrollNext={scrollNext} onClickDownload={goToDownload}/>
             </Container> 
           </Slide>
           <Slide>
             <Container>
-              <LessonRequest onClickDownload={goToDownload}></LessonRequest>
+              <LessonRequest onClickDownload={goToDownload}/>
             </Container> 
           </Slide>
           <Slide>

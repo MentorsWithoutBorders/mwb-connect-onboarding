@@ -80,7 +80,7 @@ export const AcceptRequestScreen = styled.img`
   width: 300px;
 `;
 
-export const LinksContainer = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
