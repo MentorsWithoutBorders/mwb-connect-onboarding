@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { Page, Slide, Container } from './index-styles.js';
@@ -87,7 +88,7 @@ export default class IndexPage extends React.Component {
         <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
           <Slide>
             <Container>
-              <Introduction scrollNext={scrollNext}/>
+              <Introduction partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials} scrollNext={scrollNext}/>
             </Container> 
           </Slide>            
           <Slide>
@@ -115,3 +116,23 @@ export default class IndexPage extends React.Component {
     )
   }
 }
+
+export const query = graphql`
+  {
+    postgres {
+      partners: allPartnersList {
+        position
+        name
+        url
+        logo
+      }
+      testimonials: allTestimonialsStudentsList {
+        position
+        name
+        testimonial
+        partnerNgo
+        partnerNgoUrl
+      }      
+    }
+  }
+`;

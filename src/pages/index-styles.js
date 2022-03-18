@@ -14,5 +14,5 @@ export const Slide = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 800px;
+  width: 1000px;
 `;
