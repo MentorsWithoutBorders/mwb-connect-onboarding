@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Text = styled.div`
-  text-align: center;
-  padding: 30px;
+  margin-bottom: 30px;
 `;
 
 export const OrganizationsContainer = styled.div`

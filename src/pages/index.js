@@ -2,7 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import { Page, Slide, Container } from './index-styles.js';
+import { ModalProvider } from "styled-react-modal";
+import { Page, Slide, Container, StyledModal, FadingBackground } from './index-styles.js';
 import * as constants from 'utils/constants.js';
 import { Steps } from './steps/steps.js';
 import { Introduction } from './introduction/introduction.js';
@@ -13,11 +14,13 @@ import { DownloadApp } from './download-app/download-app.js';
 
 export default class IndexPage extends React.Component {
   state = {
-    activeStep: constants.MENTOR_INTRODUCTION
+    activeStep: constants.MENTOR_INTRODUCTION,
+    isOpenModal: false,
+    modalOpacity: 0
   }
 
   render() {
-    const settings = {
+    const sliderSettings = {
       dots: false,
       infinite: false,
       speed: 500,
@@ -81,38 +84,69 @@ export default class IndexPage extends React.Component {
       this.slider.slickGoTo(constants.MENTOR_DOWNLOAD_APP);
     };
 
+    const toggleModal = (e) => {
+      this.setState({modalOpacity: 0});
+      this.setState({isOpenModal: !this.state.isOpenModal});
+    }
+  
+    const afterOpenModal = () => {
+      setTimeout(() => {
+        this.setState({modalOpacity: 1});
+      }, 100);
+    }
+  
+    const beforeCloseModal = () => {
+      return new Promise((resolve) => {
+        this.setState({modalOpacity: 0});
+        setTimeout(resolve, 300);
+      });
+    }    
+
     return (
-      <Page>
-        <title>MWB Connect Onboarding</title>
-        <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
-        <Slider ref={slider => (this.slider = slider)} arrows={false} {...settings}>
-          <Slide>
-            <Container>
-              <Introduction partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials} scrollNext={scrollNext}/>
-            </Container> 
-          </Slide>            
-          <Slide>
-            <Container>
-              <Profile scrollNext={scrollNext} onClickDownload={goToDownload}/>
-            </Container> 
-          </Slide>  
-          <Slide>
-            <Container>
-              <Training scrollNext={scrollNext} onClickDownload={goToDownload}/>
-            </Container> 
-          </Slide>
-          <Slide>
-            <Container>
-              <LessonRequest onClickDownload={goToDownload}/>
-            </Container> 
-          </Slide>
-          <Slide>
-            <Container>
-              <DownloadApp/>
-            </Container> 
-          </Slide>
-        </Slider>
-      </Page>
+      <ModalProvider backgroundComponent={FadingBackground}>
+        <Page>
+          <title>MWB Connect Onboarding</title>
+          <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
+          <Slider ref={slider => (this.slider = slider)} arrows={false} {...sliderSettings}>
+            <Slide>
+              <Container>
+                <Introduction partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials} scrollNext={scrollNext} toggleModal={toggleModal}/>
+              </Container> 
+            </Slide>            
+            <Slide>
+              <Container>
+                <Profile scrollNext={scrollNext} onClickDownload={goToDownload}/>
+              </Container> 
+            </Slide>  
+            <Slide>
+              <Container>
+                <Training scrollNext={scrollNext} onClickDownload={goToDownload}/>
+              </Container> 
+            </Slide>
+            <Slide>
+              <Container>
+                <LessonRequest onClickDownload={goToDownload}/>
+              </Container> 
+            </Slide>
+            <Slide>
+              <Container>
+                <DownloadApp/>
+              </Container> 
+            </Slide>
+          </Slider>
+        </Page>
+        <StyledModal
+          isOpen={this.state.isOpenModal}
+          afterOpen={afterOpenModal}
+          beforeClose={beforeCloseModal}
+          onBackgroundClick={toggleModal}
+          onEscapeKeydown={toggleModal}
+          opacity={this.state.modalOpacity}
+        >
+          <span>I am a modal!</span>
+          <button onClick={toggleModal}>Close me</button>
+        </StyledModal>        
+      </ModalProvider>
     )
   }
 }
