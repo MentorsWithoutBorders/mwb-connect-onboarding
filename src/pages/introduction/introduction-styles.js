@@ -4,6 +4,12 @@ export const Text = styled.div`
   margin-bottom: 30px;
 `;
 
+export const TestimonialsLink = styled.a`
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+`;
+
 export const OrganizationsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

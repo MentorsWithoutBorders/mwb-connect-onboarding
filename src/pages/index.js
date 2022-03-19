@@ -11,6 +11,7 @@ import { Profile } from './profile/profile.js';
 import { Training } from './training/training.js';
 import { LessonRequest } from './lesson-request/lesson-request.js';
 import { DownloadApp } from './download-app/download-app.js';
+import { Testimonials } from './introduction/testimonials.js';
 
 export default class IndexPage extends React.Component {
   state = {
@@ -110,7 +111,7 @@ export default class IndexPage extends React.Component {
           <Slider ref={slider => (this.slider = slider)} arrows={false} {...sliderSettings}>
             <Slide>
               <Container>
-                <Introduction partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials} scrollNext={scrollNext} toggleModal={toggleModal}/>
+                <Introduction partners={this.props.data.postgres.partners} scrollNext={scrollNext} toggleModal={toggleModal}/>
               </Container> 
             </Slide>            
             <Slide>
@@ -142,9 +143,9 @@ export default class IndexPage extends React.Component {
           onBackgroundClick={toggleModal}
           onEscapeKeydown={toggleModal}
           opacity={this.state.modalOpacity}
+          allowScroll={true}
         >
-          <span>I am a modal!</span>
-          <button onClick={toggleModal}>Close me</button>
+          <Testimonials testimonials={this.props.data.postgres.testimonials} toggleModal={toggleModal}/>
         </StyledModal>        
       </ModalProvider>
     )

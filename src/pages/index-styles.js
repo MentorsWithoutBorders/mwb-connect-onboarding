@@ -19,11 +19,12 @@ export const Container = styled.div`
 `;
 
 export const StyledModal = Modal.styled`
-  width: 600px;
-  height: 500px;
-  padding: 20px;
+  width: 800px;
+  height: 600px;
+  padding: 20px 15px 20px 20px;
   display: flex;
   background-color: white;
+  border-radius: 20px;
   opacity: ${(props) => props.opacity};
   transition : all 0.3s ease-in-out;
 `;
