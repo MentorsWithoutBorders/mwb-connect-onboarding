@@ -2,10 +2,13 @@ import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
 
 export const Page = styled.main`
-  background: radial-gradient(#03378C, #01112b);
+  background: radial-gradient(circle at center, #03378C, #01112b);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;    
   font-size: 15px;
   line-height: 1.5;
-  color: #ccc;
+  color: #ccc; 
 `;
 
 export const Slide = styled.div`

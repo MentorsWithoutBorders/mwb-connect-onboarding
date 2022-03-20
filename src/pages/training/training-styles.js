@@ -25,7 +25,6 @@ export const TrainingContainer = styled.div`
   justify-content: center;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    padding: 0 20px;
   }
 `;
 
@@ -38,38 +37,47 @@ export const GoalContainer = styled.div`
 export const GoalScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 60%;
+    width: 250px;
   }   
 `;
 
 export const GoalRight = styled.div`
   padding: 177px 0 0 5px;
   @media only screen and (max-width: 768px) {
-    width: 40%;
-  }    
+    padding-top: 146px;
+  }
 `;
 
 export const AddGoalArrowContainer = styled.div`
   width: 200px;
   display: flex;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }
 `;
 
 export const AddGoal = styled.div`
   width: 200px;
   font-size: 14px;
   text-align: center;
-  padding-bottom: 5px; 
+  padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }  
 `;
 
 export const QuizContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;  
+  margin-bottom: 50px;
 `;
 
 export const QuizLeft = styled.div`
   padding: 300px 5px 0 0;
+  @media only screen and (max-width: 768px) {
+    padding-top: 250px;
+  }  
 `;
 
 export const SolveQuizzesArrowContainer = styled.div`
@@ -77,6 +85,9 @@ export const SolveQuizzesArrowContainer = styled.div`
   display: flex;
   justify-content: right;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }  
 `;
 
 export const SolveQuizzes = styled.div`
@@ -84,10 +95,16 @@ export const SolveQuizzes = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }  
 `;
 
 export const QuizScreen = styled.img`
   width: 300px;
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+  }  
 `;
 
 export const StepsContainer = styled.div`
@@ -98,16 +115,25 @@ export const StepsContainer = styled.div`
 
 export const StepsScreen = styled.img`
   width: 300px;
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+  }   
 `;
 
 export const StepsRight = styled.div`
   padding: 300px 0 0 5px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 250px;
+  }   
 `;
 
 export const AddStepsArrowContainer = styled.div`
   width: 200px;
   display: flex;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }   
 `;
 
 export const AddSteps = styled.div`
@@ -115,6 +141,9 @@ export const AddSteps = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }   
 `;
 
 export const ButtonsContainer = styled.div`

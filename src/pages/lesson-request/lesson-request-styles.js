@@ -35,16 +35,25 @@ export const RequestContainer = styled.div`
 
 export const RequestScreen = styled.img`
   width: 300px;
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+  }  
 `;
 
 export const RequestRight = styled.div`
   padding: 335px 0 0 5px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 277px;
+  }  
 `;
 
 export const RequestArrowContainer = styled.div`
   width: 200px;
   display: flex;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }
 `;
 
 export const Request = styled.div`
@@ -52,16 +61,22 @@ export const Request = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }   
 `;
 
 export const AcceptRequestContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;  
+  margin-bottom: 50px;
 `;
 
 export const AcceptRequestLeft = styled.div`
   padding: 292px 5px 0 0;
+  @media only screen and (max-width: 768px) {
+    padding-top: 240px;
+  }  
 `;
 
 export const AcceptRequestArrowContainer = styled.div`
@@ -69,6 +84,9 @@ export const AcceptRequestArrowContainer = styled.div`
   display: flex;
   justify-content: right;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }   
 `;
 
 export const AcceptRequest = styled.div`
@@ -76,10 +94,16 @@ export const AcceptRequest = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }   
 `;
 
 export const AcceptRequestScreen = styled.img`
   width: 300px;
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+  }   
 `;
 
 export const ButtonsContainer = styled.div`
