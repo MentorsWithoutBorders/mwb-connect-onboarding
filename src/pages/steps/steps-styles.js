@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const Main = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -15,21 +20,45 @@ export const ArrowsContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding-top: 20px;
+  gap: 70px;
+  padding-top: 140px;
+  @media only screen and (max-width: 768px) {
+    width: 450px;
+    gap: 50px;
+  }  
+`;
+
+export const ArrowContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 80px;
+  @media only screen and (max-width: 768px) {
+    width: 40px;
+  }  
+`;
+
+export const ArrowLine = styled.div`
+  width: 75px;
+  height: 3px;
+  background: #ccc;
 `;
 
 export const Arrow = styled.img`
-  width: 110px;
+  width: 5px;
 `;
 
 export const StepsContainer = styled.div`
   position: absolute;
   z-index: 1;
-  width: 100%;  
+  width: 100%; 
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding-top: 110px;
+  @media only screen and (max-width: 768px) {
+    width: 450px;
+    padding-top: 120px;
+  }  
 `;
 
 export const StepContainer = styled.div`
@@ -43,5 +72,11 @@ export const StepContainer = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 70px;  
+  width: 70px;
+  ${({ isIntroduction }) => isIntroduction && `
+    margin-left: -3px;   
+  `}
+  @media only screen and (max-width: 768px) {
+    width: 50px;
+  }
 `;

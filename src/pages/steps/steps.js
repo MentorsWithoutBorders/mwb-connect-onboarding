@@ -1,9 +1,11 @@
 import * as React from 'react'
-import { LogoContainer, Logo, ArrowsContainer, Arrow, StepsContainer, StepContainer,  Icon } from './steps-styles.js';
+import { Main, LogoContainer, Logo, ArrowsContainer, ArrowContainer, ArrowLine, Arrow, StepsContainer, StepContainer, Icon } from './steps-styles.js';
 import { StepText } from './step-text.js';
 import * as constants from 'utils/constants.js';
 import LogoImg from 'images/mwb-logo.png';
-import ArrowImg from 'images/desktop-steps-arrow.png';
+import ArrowImg from 'images/steps-arrow.png';
+import IntroductionActiveIcon from 'images/introduction-active-icon.png';
+import IntroductionInactiveIcon from 'images/introduction-inactive-icon.png';
 import ProfileActiveIcon from 'images/profile-active-icon.png';
 import ProfileInactiveIcon from 'images/profile-inactive-icon.png';
 import TrainingActiveIcon from 'images/training-active-icon.png';
@@ -15,19 +17,31 @@ import DownloadAppInactiveIcon from 'images/download-app-inactive-icon.png';
 
 export const Steps = ({activeStep, goToIntroduction, goToProfile, goToTraining, goToLessonRequest, goToDownload}) => {
   return (
-    <div>
+    <Main>
       <LogoContainer>
         <Logo src={LogoImg} alt="MWB logo"/>
       </LogoContainer>
       <ArrowsContainer>
-        <Arrow src={ArrowImg}/>
-        <Arrow src={ArrowImg}/>
-        <Arrow src={ArrowImg}/>
-        <Arrow src={ArrowImg}/>
+        <ArrowContainer>
+          <ArrowLine/>
+          <Arrow src={ArrowImg}/>
+        </ArrowContainer>
+        <ArrowContainer>
+          <ArrowLine/>
+          <Arrow src={ArrowImg}/>
+        </ArrowContainer>
+        <ArrowContainer>
+          <ArrowLine/>
+          <Arrow src={ArrowImg}/>
+        </ArrowContainer>
+        <ArrowContainer>
+          <ArrowLine/>
+          <Arrow src={ArrowImg}/>
+        </ArrowContainer>
       </ArrowsContainer>      
       <StepsContainer>
         <StepContainer onClick={goToIntroduction}>
-          <Icon src={activeStep === constants.MENTOR_INTRODUCTION ? ProfileActiveIcon : ProfileInactiveIcon} alt="Introduction"/>
+          <Icon src={activeStep === constants.MENTOR_INTRODUCTION ? IntroductionActiveIcon : IntroductionInactiveIcon} isIntroduction={true} alt="Introduction"/>
           <StepText number='1' text='Introduction' isActive={activeStep === constants.MENTOR_INTRODUCTION}/>
         </StepContainer>        
         <StepContainer onClick={goToProfile}>
@@ -47,6 +61,6 @@ export const Steps = ({activeStep, goToIntroduction, goToProfile, goToTraining, 
           <StepText number='5' text='Download app' isActive={activeStep === constants.MENTOR_DOWNLOAD_APP}/>
         </StepContainer>
       </StepsContainer>    
-    </div>
+    </Main>
   )
 }
