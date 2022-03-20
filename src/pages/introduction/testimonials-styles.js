@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const CloseContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  @media only screen and (max-width: 768px) {
+    padding-right: 10px;
+  }  
 `;
 
 export const Close = styled.img`
@@ -20,11 +23,11 @@ export const Title = styled.div`
 export const TestimonialsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 export const TestimonialContainer = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: 30px;  
 `;
 
 export const PhotoContainer = styled.div`
@@ -45,9 +48,13 @@ export const Photo = styled.img`
 `;
 
 export const DescriptionContainer = styled.div`
-  margin: -50px 30px -40px 30px;
+  margin: -50px 20px -40px 20px;
   padding: 60px 40px 30px 30px;
   border: 1px solid #ea816b;
+  @media only screen and (max-width: 768px) {
+    margin: -50px 15px -40px 15px;
+    padding: 70px 25px 50px 15px;  
+  }  
 `;
 
 export const DescriptionTextContainer = styled.div`
@@ -87,17 +94,27 @@ export const Student = styled.div`
   color: #FF5500;
   line-height: 1;
   letter-spacing: 1px;
+  @media only screen and (max-width: 768px) {
+    margin: 12px 30px;
+    padding: 4px 12px 12px 12px; 
+  }  
 `;
 
 export const NameContainer = styled.div`
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Name = styled.div`
   margin: 10px 5px 8px 0;
   text-align: left;
   line-height: 1.3;
+  @media only screen and (max-width: 768px) {
+    line-height: 1;
+  }  
 `;
 
 export const Dash = styled.span`
@@ -106,7 +123,10 @@ export const Dash = styled.span`
   color: #666;
   text-align: left;
   font-weight: normal;  
-  line-height: 25px;  
+  line-height: 25px;
+  @media only screen and (max-width: 768px) {
+    display: none; 
+  }
 `;
 
 export const OrganizationLink = styled.a`
@@ -122,5 +142,8 @@ export const Organization = styled.div`
   color: #666;
   text-align: left;
   font-weight: normal;  
-  line-height: 25px; 
+  line-height: 25px;
+  @media only screen and (max-width: 768px) {
+    font-size: 16px;
+  }  
 `;

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  text-align: justify;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  @media only screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 export const TopText = styled.div`
@@ -12,7 +14,11 @@ export const TopText = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 30px; 
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 export const ProfileScreen = styled.img`

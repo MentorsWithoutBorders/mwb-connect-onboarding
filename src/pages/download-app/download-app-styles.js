@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const Text = styled.div`
   text-align: center;
-  padding: 30px;
+  margin: 30px;
+  @media only screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 export const DownloadContainer = styled.div`

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Text = styled.main`
-  text-align: justify;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  @media only screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 export const TopText = styled.div`
@@ -12,12 +14,19 @@ export const TopText = styled.div`
 export const TrainingExercisesContainer = styled.div`
   display: flex;
   gap: 15px;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }  
 `;
 
 export const TrainingContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 export const GoalContainer = styled.div`
@@ -28,10 +37,16 @@ export const GoalContainer = styled.div`
 
 export const GoalScreen = styled.img`
   width: 300px;
+  @media only screen and (max-width: 768px) {
+    width: 60%;
+  }   
 `;
 
 export const GoalRight = styled.div`
   padding: 177px 0 0 5px;
+  @media only screen and (max-width: 768px) {
+    width: 40%;
+  }    
 `;
 
 export const AddGoalArrowContainer = styled.div`
@@ -44,7 +59,7 @@ export const AddGoal = styled.div`
   width: 200px;
   font-size: 14px;
   text-align: center;
-  padding-bottom: 5px;
+  padding-bottom: 5px; 
 `;
 
 export const QuizContainer = styled.div`

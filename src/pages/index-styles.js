@@ -16,17 +16,24 @@ export const Slide = styled.div`
 
 export const Container = styled.div`
   width: 1000px;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const StyledModal = Modal.styled`
   width: 800px;
-  height: 600px;
   padding: 20px 15px 20px 20px;
   display: flex;
   background-color: white;
   border-radius: 20px;
   opacity: ${(props) => props.opacity};
   transition : all 0.3s ease-in-out;
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    height: 70%;
+    padding: 20px 5px;
+  }
 `;
 
 export const FadingBackground = styled(BaseModalBackground)`
