@@ -11,26 +11,47 @@ export const TopText = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ProfileContainer = styled.div`
+export const ProfileContainerDesktop = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 30px; 
   @media only screen and (max-width: 768px) {
-    width: 100%;
-    padding: 0 20px;
+    display: none;
+  }
+`;
+
+export const ProfileContainerMobile = styled.div`
+  display: none;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; 
   }
 `;
 
 export const ProfileScreen = styled.img`
   width: 300px;
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+  }  
 `;
 
 export const ProfileLeft = styled.div`
   padding: 30px 5px 0 0;
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+    padding: 96px 5px 0 0;    
+  }   
 `;
 
 export const ProfileRight = styled.div`
   padding: 170px 0 0 5px;
+`;
+
+export const ChooseFieldContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
 `;
 
 export const ChooseField = styled.div`
@@ -39,6 +60,11 @@ export const ChooseField = styled.div`
   font-weight: bold;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px 0 0;
+  }  
 `;
 
 export const ChooseFieldArrowContainer = styled.div`
@@ -46,6 +72,17 @@ export const ChooseFieldArrowContainer = styled.div`
   display: flex;
   justify-content: right;
   padding-bottom: 85px;
+  @media only screen and (max-width: 768px) {
+    width: 50px;
+    height: 15px;
+    padding-bottom: 0;
+  }
+`;
+
+export const AddSkillsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 143px;
 `;
 
 export const AddSkills = styled.div`
@@ -53,6 +90,12 @@ export const AddSkills = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 0 10px 0 0;        
+  }   
 `;
 
 export const AddSkillsArrowContainer = styled.div`
@@ -60,6 +103,16 @@ export const AddSkillsArrowContainer = styled.div`
   display: flex;
   justify-content: right;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 50px;
+    height: 15px;
+  }  
+`;
+
+export const AddSubfieldsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
 `;
 
 export const AddSubfields = styled.div`
@@ -67,12 +120,28 @@ export const AddSubfields = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 85px;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px 0 0;
+  }   
 `;
 
 export const AddSubfieldsArrowContainer = styled.div`
   width: 200px;
   display: flex;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    justify-content: right;    
+    width: 50px;
+    height: 15px;
+    padding-bottom: 0;
+  }  
+`;
+
+export const AddAvailabilitiesContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const AddAvailabilities = styled.div`
@@ -80,12 +149,23 @@ export const AddAvailabilities = styled.div`
   font-size: 14px;
   text-align: center;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 0 10px 0 0;    
+  }   
 `;
 
 export const AddAvailabilitiesArrowContainer = styled.div`
   width: 200px;
   display: flex;
   padding-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    justify-content: right;    
+    width: 50px;
+    height: 15px;
+  }  
 `;
 
 export const ButtonsContainer = styled.div`

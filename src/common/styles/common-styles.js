@@ -24,3 +24,7 @@ export const UpLeftArrow = styled.img`
   transform: scaleX(-1);
   transform: rotate(180deg);
 `;
+
+export const MobileArrow = styled.img`
+  width: 30px;
+`;
