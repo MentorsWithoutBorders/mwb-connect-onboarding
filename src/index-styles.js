@@ -9,7 +9,7 @@ export const Page = styled.main`
   font-size: 15px;
   line-height: 1.5;
   color: #ccc;
-  @supports (-webkit-touch-callout: none) {
+  @media only screen and (max-width: 768px) {
     background-attachment: scroll;
   }    
 `;
