@@ -2,10 +2,6 @@
 
 html, 
 body {
-  background: radial-gradient(circle at center, #03378C, #01112b);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
   width: 100%;
   height: 100%;  
   margin: 0;
