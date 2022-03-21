@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import smoothscroll from 'smoothscroll-polyfill';
+import { animateScroll as scroll } from 'react-scroll';
 import { ModalProvider } from 'styled-react-modal';
 import { Page, Slide, Container, StyledModal, FadingBackground } from 'index-styles.js';
 import * as constants from 'utils/constants.js';
@@ -20,10 +20,6 @@ export default class IndexPage extends React.Component {
     isOpenModal: false,
     modalOpacity: 0
   }
-
-  componentDidMount() {
-    smoothscroll.polyfill();
-  }  
 
   render() {
     const sliderSettings = {
@@ -54,9 +50,10 @@ export default class IndexPage extends React.Component {
 
     const scrollToTop = (index) => {
       setActiveStep(index);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      scroll.scrollToTop({
+        duration: 400,
+        delay: 0,
+        smooth: true
       });
     };
 
