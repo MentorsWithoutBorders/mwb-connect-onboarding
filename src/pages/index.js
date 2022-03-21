@@ -49,10 +49,10 @@ export default class IndexPage extends React.Component {
 
     const scrollToTop = (index) => {
       setActiveStep(index);
-      // window.scrollTo({
-      //   top: 0,
-      //   behavior: 'smooth'
-      // });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     };
 
     const scrollNext = () => {
