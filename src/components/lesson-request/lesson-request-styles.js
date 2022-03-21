@@ -36,14 +36,14 @@ export const RequestContainer = styled.div`
 export const RequestScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 250px;
+    width: 230px;
   }  
 `;
 
 export const RequestRight = styled.div`
   padding: 335px 0 0 5px;
   @media only screen and (max-width: 768px) {
-    padding-top: 277px;
+    padding-top: 257px;
   }  
 `;
 
@@ -69,13 +69,13 @@ export const Request = styled.div`
 export const AcceptRequestContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 export const AcceptRequestLeft = styled.div`
   padding: 292px 5px 0 0;
   @media only screen and (max-width: 768px) {
-    padding-top: 240px;
+    padding-top: 220px;
   }  
 `;
 
@@ -102,7 +102,7 @@ export const AcceptRequest = styled.div`
 export const AcceptRequestScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 250px;
+    width: 230px;
   }   
 `;
 

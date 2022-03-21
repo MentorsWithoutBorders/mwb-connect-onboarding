@@ -32,7 +32,7 @@ export const OrganizationContainer = styled.a`
   background: white;
   border-radius: 20px;
   @media only screen and (max-width: 768px) {
-    width: 47%;
+    width: 45%;
   }
 `;
 
@@ -46,4 +46,5 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   align-content: space-between;
+  margin-bottom: 30px;
 `;

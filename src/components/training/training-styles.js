@@ -37,14 +37,14 @@ export const GoalContainer = styled.div`
 export const GoalScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 250px;
+    width: 230px;
   }   
 `;
 
 export const GoalRight = styled.div`
   padding: 177px 0 0 5px;
   @media only screen and (max-width: 768px) {
-    padding-top: 146px;
+    padding-top: 136px;
   }
 `;
 
@@ -76,7 +76,7 @@ export const QuizContainer = styled.div`
 export const QuizLeft = styled.div`
   padding: 300px 5px 0 0;
   @media only screen and (max-width: 768px) {
-    padding-top: 250px;
+    padding-top: 230px;
   }  
 `;
 
@@ -103,7 +103,7 @@ export const SolveQuizzes = styled.div`
 export const QuizScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 250px;
+    width: 230px;
   }  
 `;
 
@@ -116,14 +116,14 @@ export const StepsContainer = styled.div`
 export const StepsScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 250px;
-  }   
+    width: 230px;
+  }
 `;
 
 export const StepsRight = styled.div`
   padding: 300px 0 0 5px;
   @media only screen and (max-width: 768px) {
-    padding-top: 250px;
+    padding-top: 230px;
   }   
 `;
 
@@ -151,5 +151,6 @@ export const ButtonsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-between;
+  margin: 0 20px;
   padding-bottom: 50px;
 `;

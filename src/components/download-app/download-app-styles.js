@@ -15,5 +15,8 @@ export const DownloadContainer = styled.div`
 `;
 
 export const Download = styled.img`
-  width: 170px;
+  height: 60px;
+  @media only screen and (max-width: 768px) {
+    height: 50px;
+  }  
 `;

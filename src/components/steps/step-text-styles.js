@@ -4,6 +4,9 @@ export const TextContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+  ${({ isLessonRequest }) => isLessonRequest && `
+    padding-left: 2px;
+  `}  
 `;
 
 export const NumberContainer = styled.div`
@@ -18,7 +21,7 @@ export const NumberContainer = styled.div`
     background-color: #f45101;
   `}
   @media only screen and (max-width: 768px) {
-    width: 17px;
+    min-width: 17px;
     height: 17px;
   }  
 `;

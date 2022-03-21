@@ -11,6 +11,11 @@ export const CloseContainer = styled.div`
 export const Close = styled.img`
   cursor: pointer;
   width: 20px;
+  margin-bottom: 5px;
+  @media only screen and (max-width: 768px) {
+    width: 15px;
+    margin-bottom: 20px;
+  }   
 `;
 
 export const Title = styled.div`

@@ -23,17 +23,19 @@ export const ArrowsContainer = styled.div`
   gap: 70px;
   padding-top: 140px;
   @media only screen and (max-width: 768px) {
-    width: 450px;
-    gap: 50px;
+    width: 380px;
+    gap: 42px;
+    padding-left: 11px;
   }  
 `;
 
 export const ArrowContainer = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 80px;
   @media only screen and (max-width: 768px) {
-    width: 40px;
+    width: 31px;
   }  
 `;
 
@@ -41,6 +43,9 @@ export const ArrowLine = styled.div`
   width: 75px;
   height: 3px;
   background: #ccc;
+  @media only screen and (max-width: 768px) {
+    width: 26px;
+  }   
 `;
 
 export const Arrow = styled.img`
@@ -56,7 +61,7 @@ export const StepsContainer = styled.div`
   justify-content: center;
   padding-top: 110px;
   @media only screen and (max-width: 768px) {
-    width: 450px;
+    width: 380px;
     padding-top: 120px;
   }  
 `;
@@ -76,8 +81,8 @@ export const StepContainer = styled.div`
 
 export const Icon = styled.img`
   width: 70px;
-  ${({ isIntroduction }) => isIntroduction && `
-    margin-left: -3px;   
+  ${({ shouldMove }) => shouldMove && `
+    margin-left: -3px;
   `}
   @media only screen and (max-width: 768px) {
     width: 50px;

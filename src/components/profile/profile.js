@@ -10,7 +10,7 @@ export const Profile = ({scrollNext, onClickDownload}) => {
   return (
     <div>
       <Content>
-        <TopText>In order to receive lesson requests from the students, you'll have to <b>go to your profile in the MWB Connect app</b> and then do the following:</TopText>
+        <TopText>In order to receive lesson requests from the students, you'll have to install the MWB Connect app and then do the following in <b>your profile</b>:</TopText>
         <ProfileContainerDesktop>
           <ProfileLeft>
             <ChooseField>Choose your field</ChooseField>

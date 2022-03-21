@@ -25,14 +25,14 @@ export const ProfileContainerMobile = styled.div`
   @media only screen and (max-width: 768px) {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 `;
 
 export const ProfileScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 250px;
+    width: 230px;
   }  
 `;
 
@@ -40,7 +40,7 @@ export const ProfileLeft = styled.div`
   padding: 30px 5px 0 0;
   @media only screen and (max-width: 768px) {
     width: 150px;
-    padding: 96px 5px 0 0;    
+    padding: 88px 5px 0 0;    
   }   
 `;
 
@@ -51,7 +51,7 @@ export const ProfileRight = styled.div`
 export const ChooseFieldContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 `;
 
 export const ChooseField = styled.div`
@@ -82,7 +82,7 @@ export const ChooseFieldArrowContainer = styled.div`
 export const AddSkillsContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 143px;
+  margin-bottom: 120px;
 `;
 
 export const AddSkills = styled.div`

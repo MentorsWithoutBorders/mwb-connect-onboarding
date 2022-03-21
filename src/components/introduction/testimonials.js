@@ -20,7 +20,7 @@ export const Testimonials = ({testimonials, toggleModal}) => {
         <Scrollbars
           thumbMinSize={100}
           autoHeight
-          autoHeightMin={'60vh'}
+          autoHeightMin={'57vh'}
         >
           {testimonials.map(testimonial => {
             const photo = 'https://mentorswithoutborders.net/images/testimonials/students/' + testimonial.name.replaceAll(' ', '-') + '.jpg';

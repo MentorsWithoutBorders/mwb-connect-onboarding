@@ -10,7 +10,8 @@ export const Introduction = ({partners, scrollNext, toggleModal}) => {
   return (
     <div>
       <Text>
-        We are mentoring underprivileged young people from our partner NGOs shown below and we are focusing primarily on those who are 18+ years old, speak English well and have access to computers/smartphones and internet connections (thanks to the support from the organizations that they belong to). After a while, our students become mentors themselves and thus our impact grows exponentially.
+        We are mentoring underprivileged young people from our partner NGOs shown below and we are focusing primarily on teaching those who are 18+ years old, speak English well and have access to computers / smartphones and internet connections (thanks to the support from the organizations that they belong to).
+        <p>After a while, our students become mentors themselves and thus our impact grows exponentially.</p>
         <p>If you would like to see the testimonials from some of our students, <TestimonialsLink onClick={toggleModal}>please click here</TestimonialsLink>.</p>
       </Text>
       <OrganizationsContainer>

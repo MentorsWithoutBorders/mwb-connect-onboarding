@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
 
-export const Page = styled.main`
-  background: radial-gradient(circle at center, #03378C, #01112b);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;    
+export const Page = styled.main`  
   font-size: 15px;
   line-height: 1.5;
   color: #ccc; 
@@ -33,7 +29,7 @@ export const StyledModal = Modal.styled`
   opacity: ${(props) => props.opacity};
   transition : all 0.3s ease-in-out;
   @media only screen and (max-width: 768px) {
-    width: 80%;
+    width: 90%;
     height: 70%;
     padding: 20px 5px;
   }
