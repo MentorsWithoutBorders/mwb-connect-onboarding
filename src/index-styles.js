@@ -4,7 +4,7 @@ import Modal, { BaseModalBackground } from 'styled-react-modal';
 export const Page = styled.main`  
   font-size: 15px;
   line-height: 1.5;
-  color: #ccc; 
+  color: #ccc;
 `;
 
 export const Slide = styled.div`

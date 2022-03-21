@@ -57,12 +57,12 @@ export const ChooseFieldContainer = styled.div`
 export const ChooseField = styled.div`
   width: 200px;
   font-size: 14px;
-  font-weight: bold;
   text-align: center;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
     display: flex;
     justify-content: flex-end;
+    text-align: right;    
     padding: 0 10px 0 0;
   }  
 `;

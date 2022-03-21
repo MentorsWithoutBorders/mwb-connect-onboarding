@@ -6,14 +6,17 @@ export const TextContainer = styled.div`
   gap: 5px;
   ${({ isLessonRequest }) => isLessonRequest && `
     padding-left: 2px;
-  `}  
+  `}
+  @media only screen and (max-width: 768px) {
+    gap: 2px;
+  }   
 `;
 
 export const NumberContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 19px;
+  width: 18px;
   height: 19px;
   border-radius: 50%;
   background-color: #ddd;
@@ -21,7 +24,7 @@ export const NumberContainer = styled.div`
     background-color: #f45101;
   `}
   @media only screen and (max-width: 768px) {
-    min-width: 17px;
+    min-width: 16px;
     height: 17px;
   }  
 `;
