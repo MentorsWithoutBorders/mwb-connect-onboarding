@@ -70,7 +70,7 @@ export const ChooseField = styled.div`
 export const ChooseFieldArrowContainer = styled.div`
   width: 200px;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   padding-bottom: 85px;
   @media only screen and (max-width: 768px) {
     width: 50px;
@@ -101,7 +101,7 @@ export const AddSkills = styled.div`
 export const AddSkillsArrowContainer = styled.div`
   width: 200px;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
     width: 50px;
@@ -132,7 +132,7 @@ export const AddSubfieldsArrowContainer = styled.div`
   display: flex;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
-    justify-content: right;    
+    justify-content: flex-end;    
     width: 50px;
     height: 15px;
     padding-bottom: 0;
@@ -162,7 +162,7 @@ export const AddAvailabilitiesArrowContainer = styled.div`
   display: flex;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
-    justify-content: right;    
+    justify-content: flex-end;    
     width: 50px;
     height: 15px;
   }  

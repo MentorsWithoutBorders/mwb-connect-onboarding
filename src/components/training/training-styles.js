@@ -83,7 +83,7 @@ export const QuizLeft = styled.div`
 export const SolveQuizzesArrowContainer = styled.div`
   width: 200px;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
     width: 150px;
