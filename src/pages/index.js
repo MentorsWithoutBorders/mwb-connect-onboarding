@@ -2,16 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import { ModalProvider } from "styled-react-modal";
-import { Page, Slide, Container, StyledModal, FadingBackground } from './index-styles.js';
+import { ModalProvider } from 'styled-react-modal';
+import { Page, Slide, Container, StyledModal, FadingBackground } from 'index-styles.js';
 import * as constants from 'utils/constants.js';
-import { Steps } from './steps/steps.js';
-import { Introduction } from './introduction/introduction.js';
-import { Profile } from './profile/profile.js';
-import { Training } from './training/training.js';
-import { LessonRequest } from './lesson-request/lesson-request.js';
-import { DownloadApp } from './download-app/download-app.js';
-import { Testimonials } from './introduction/testimonials.js';
+import { Steps } from 'components/steps/steps.js';
+import { Introduction } from 'components/introduction/introduction.js';
+import { Profile } from 'components/profile/profile.js';
+import { Training } from 'components/training/training.js';
+import { LessonRequest } from 'components/lesson-request/lesson-request.js';
+import { DownloadApp } from 'components/download-app/download-app.js';
+import { Testimonials } from 'components/introduction/testimonials.js';
 
 export default class IndexPage extends React.Component {
   state = {
@@ -49,10 +49,10 @@ export default class IndexPage extends React.Component {
 
     const scrollToTop = (index) => {
       setActiveStep(index);
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: 'smooth'
+      // });
     };
 
     const scrollNext = () => {
