@@ -107,6 +107,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <ModalProvider backgroundComponent={FadingBackground}>
+        <Background/>
         <Page>
           <title>MWB Connect Onboarding</title>
           <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>

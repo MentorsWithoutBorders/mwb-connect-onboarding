@@ -6,6 +6,7 @@ export const Main = styled.div`
 `;
 
 export const LogoContainer = styled.div`
+  z-index: 1;
   display: flex;
   justify-content: center;
   padding: 30px;

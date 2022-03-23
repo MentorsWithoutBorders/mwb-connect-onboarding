@@ -48,6 +48,7 @@ export const Text = styled.div`
     color: #f45101;
   `}
   @media only screen and (max-width: 768px) {
+    font-family: 'Roboto Condensed', sans-serif;    
     font-size: 12px;
   }   
 `;
