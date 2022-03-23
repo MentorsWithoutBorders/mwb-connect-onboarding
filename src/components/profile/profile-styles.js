@@ -32,15 +32,16 @@ export const ProfileContainerMobile = styled.div`
 export const ProfileScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 230px;
+    width: 210px;
   }  
 `;
 
 export const ProfileLeft = styled.div`
   padding: 30px 5px 0 0;
   @media only screen and (max-width: 768px) {
-    width: 150px;
-    padding: 88px 5px 0 0;    
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 140px;
+    padding: 80px 2px 0 0;
   }   
 `;
 
@@ -51,7 +52,7 @@ export const ProfileRight = styled.div`
 export const ChooseFieldContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 `;
 
 export const ChooseField = styled.div`
@@ -63,7 +64,7 @@ export const ChooseField = styled.div`
     display: flex;
     justify-content: flex-end;
     text-align: right;    
-    padding: 0 10px 0 0;
+    padding: 0 5px 0 0;
   }  
 `;
 
@@ -83,6 +84,9 @@ export const AddSkillsContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 120px;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 122px;
+  }  
 `;
 
 export const AddSkills = styled.div`
@@ -94,7 +98,7 @@ export const AddSkills = styled.div`
     display: flex;
     justify-content: flex-end;
     text-align: right;
-    padding: 0 10px 0 0;        
+    padding: 0 5px 0 0;        
   }   
 `;
 
@@ -113,6 +117,9 @@ export const AddSubfieldsContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 2px;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 5px;
+  }  
 `;
 
 export const AddSubfields = styled.div`
@@ -123,7 +130,7 @@ export const AddSubfields = styled.div`
   @media only screen and (max-width: 768px) {
     display: flex;
     justify-content: flex-end;
-    padding: 0 10px 0 0;
+    padding: 0 5px 0 0;
   }   
 `;
 
@@ -153,7 +160,7 @@ export const AddAvailabilities = styled.div`
     display: flex;
     justify-content: flex-end;
     text-align: right;
-    padding: 0 10px 0 0;    
+    padding: 0 5px 0 0;    
   }   
 `;
 

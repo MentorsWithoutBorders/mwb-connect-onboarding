@@ -4,11 +4,11 @@ export const TextContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  ${({ isLessonRequest }) => isLessonRequest && `
-    padding-left: 2px;
+  ${({ isShifted }) => isShifted && `
+    padding-left: 5px;
   `}
   @media only screen and (max-width: 768px) {
-    gap: 2px;
+    gap: 3px;
   }   
 `;
 
@@ -24,8 +24,9 @@ export const NumberContainer = styled.div`
     background-color: #f45101;
   `}
   @media only screen and (max-width: 768px) {
-    min-width: 16px;
-    height: 17px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
   }  
 `;
 
@@ -36,7 +37,7 @@ export const Number = styled.div`
     color: white;
   `}
   @media only screen and (max-width: 768px) {
-    font-size: 13px;
+    font-size: 12px;
   }  
 `;
 
@@ -50,5 +51,5 @@ export const Text = styled.div`
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;    
     font-size: 12px;
-  }   
+  }
 `;

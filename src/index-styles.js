@@ -10,14 +10,13 @@ export const Background = styled.div`
   width: 100vw;  
 `;
 
-export const Page = styled.main`
-  background: radial-gradient(circle at center, #03378C, #01112b);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+export const Page = styled.div`
   font-size: 15px;
   line-height: 1.5;
-  color: #ccc; 
+  color: #ccc;
+  @media only screen and (max-width: 768px) {
+    color: #eee;
+  }  
 `;
 
 export const Slide = styled.div`

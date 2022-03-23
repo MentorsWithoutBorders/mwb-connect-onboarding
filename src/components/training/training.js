@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ActionButton } from 'components/ActionButton/action-button.js';
-import { LineBreak, UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
+import { LineBreak, BoldText, UpRightArrow, UpLeftArrow } from 'common/styles/common-styles.js';
 import { Text, TopText, TrainingExercisesContainer, TrainingContainer, GoalContainer, GoalScreen, GoalRight, AddGoalArrowContainer, AddGoal, QuizContainer, QuizLeft, SolveQuizzes, SolveQuizzesArrowContainer, QuizScreen, StepsContainer, StepsScreen, StepsRight, AddStepsArrowContainer, AddSteps, ButtonsContainer } from './training-styles.js';
 import { TrainingExercise } from './training-exercise.js';
 import GoalImg from 'images/mentor-goal.png';
@@ -12,20 +12,20 @@ export const Training = ({scrollNext, onClickDownload}) => {
   return (
     <div>
       <Text>
-        <TopText>Apart from sharing with the students their professional knowledge and skills, the mentors are also teaching them how to <b>set very clear and specific professional goals</b> and how to <b>pursue these goals with a lot of patience, joy, and efficiency</b>.
-        <p>For this purpose, we are teaching <b>3 very simple, yet extremely powerful exercises</b>:</p>
+        <TopText>Apart from sharing with the students their professional knowledge and skills, the mentors are also teaching them how to <BoldText>set very clear and specific professional goals</BoldText> and how to <BoldText>pursue these goals with a lot of patience, joy, and efficiency</BoldText>.
+        <p>For this purpose, we are teaching <BoldText>3 very simple, yet extremely powerful exercises</BoldText>:</p>
         <TrainingExercisesContainer>
           <TrainingExercise 
             title = 'Mental process goal/steps'
-            text = {<span>which helps our students generate a continuous stream of <b>ideas, energy, and confidence</b> channeled towards their goals.</span>}/>
+            text = {<span>which helps our students generate a continuous stream of <BoldText>ideas, energy, and confidence</BoldText> channeled towards their goals.</span>}/>
           <TrainingExercise 
             title = 'Quick and deep relaxation methods'
-            text = {<span>which allow our students to transition from any negative state (e.g. impatience, frustration, discouragement, worry, stress, etc.) to <b>a very pleasant, relaxed state.</b></span>}/>
+            text = {<span>which allow our students to transition from any negative state (e.g. impatience, frustration, discouragement, worry, stress, etc.) to <BoldText>a very pleasant, relaxed state.</BoldText></span>}/>
           <TrainingExercise 
             title = 'Super-focus method'
-            text = {<span>which allows our students to <b>immerse themselves more and more</b> in each and every step that they are taking.</span>}/>          
+            text = {<span>which allows our students to <BoldText>immerse themselves more and more</BoldText> in each and every step that they are taking.</span>}/>          
         </TrainingExercisesContainer>
-        <p>In order to explain these 3 exercises efficiently to your students, we will kindly ask you to <b>practice them for 1 month</b> in the following way:</p></TopText>
+        <p>In order to explain these 3 exercises efficiently to your students, we will kindly ask you to <BoldText>practice them for 1 month</BoldText> in the following way:</p></TopText>
         <TrainingContainer>
           <GoalContainer>
             <GoalScreen src={GoalImg} alt="Goal"/>

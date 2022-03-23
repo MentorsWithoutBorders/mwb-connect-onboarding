@@ -36,14 +36,15 @@ export const RequestContainer = styled.div`
 export const RequestScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 230px;
+    width: 220px;
   }  
 `;
 
 export const RequestRight = styled.div`
   padding: 335px 0 0 5px;
   @media only screen and (max-width: 768px) {
-    padding-top: 257px;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 245px 0 0 3px;
   }  
 `;
 
@@ -52,7 +53,7 @@ export const RequestArrowContainer = styled.div`
   display: flex;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
-    width: 150px;
+    width: 110px;
   }
 `;
 
@@ -62,7 +63,7 @@ export const Request = styled.div`
   text-align: center;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
-    width: 150px;
+    width: 110px;
   }   
 `;
 
@@ -75,7 +76,8 @@ export const AcceptRequestContainer = styled.div`
 export const AcceptRequestLeft = styled.div`
   padding: 292px 5px 0 0;
   @media only screen and (max-width: 768px) {
-    padding-top: 220px;
+    font-family: 'Roboto Condensed', sans-serif;  
+    padding: 213px 3px 0 0;
   }  
 `;
 
@@ -85,7 +87,7 @@ export const AcceptRequestArrowContainer = styled.div`
   justify-content: flex-end;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
-    width: 150px;
+    width: 110px;
   }   
 `;
 
@@ -95,14 +97,14 @@ export const AcceptRequest = styled.div`
   text-align: center;
   padding-bottom: 5px;
   @media only screen and (max-width: 768px) {
-    width: 150px;
+    width: 110px;
   }   
 `;
 
 export const AcceptRequestScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
-    width: 230px;
+    width: 220px;
   }   
 `;
 

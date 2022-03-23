@@ -13,6 +13,7 @@ import { Training } from 'components/training/training.js';
 import { LessonRequest } from 'components/lesson-request/lesson-request.js';
 import { DownloadApp } from 'components/download-app/download-app.js';
 import { Testimonials } from 'components/introduction/testimonials.js';
+import { Background } from 'index-styles';
 
 export default class IndexPage extends React.Component {
   state = {

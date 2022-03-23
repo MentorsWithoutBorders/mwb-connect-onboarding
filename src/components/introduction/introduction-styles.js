@@ -11,7 +11,7 @@ export const TestimonialsLink = styled.a`
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
-  color: #32baf3;
+  color: #2db2ea;
 `;
 
 export const OrganizationsContainer = styled.div`
@@ -47,5 +47,5 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   align-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 `;

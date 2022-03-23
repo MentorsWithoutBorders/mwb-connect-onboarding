@@ -16,43 +16,6 @@ export const Logo = styled.img`
   height: 50px;
 `;
 
-export const ArrowsContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 70px;
-  padding-top: 140px;
-  @media only screen and (max-width: 768px) {
-    width: 380px;
-    gap: 42px;
-    padding-left: 11px;
-  }  
-`;
-
-export const ArrowContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  @media only screen and (max-width: 768px) {
-    width: 31px;
-  }  
-`;
-
-export const ArrowLine = styled.div`
-  width: 75px;
-  height: 3px;
-  background: #ccc;
-  @media only screen and (max-width: 768px) {
-    width: 26px;
-  }   
-`;
-
-export const Arrow = styled.img`
-  width: 5px;
-`;
-
 export const StepsContainer = styled.div`
   position: absolute;
   z-index: 1;
@@ -62,30 +25,101 @@ export const StepsContainer = styled.div`
   justify-content: center;
   padding-top: 110px;
   @media only screen and (max-width: 768px) {
-    width: 380px;
-    padding-top: 120px;
-  }  
+    padding: 120px 0 0 4px;
+  }
 `;
 
 export const StepContainer = styled.div`
-  cursor: pointer;
+  position: relative;
   width: 150px;
+  @media only screen and (max-width: 768px) {
+    width: 70px;
+  }    
+`;
+
+export const OptionContainer = styled.div`
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
   @media only screen and (max-width: 768px) {
-    gap: 5px;
+    gap: 2px;
   }   
 `;
 
 export const Icon = styled.img`
-  width: 70px;
-  ${({ shouldMove }) => shouldMove && `
-    margin-left: -3px;
-  `}
+  height: 70px;
   @media only screen and (max-width: 768px) {
-    width: 50px;
+    height: 48px;
+    ${({ isShifted }) => isShifted && `
+      margin-left: -3px;
+    `}      
   }
+`;
+
+export const IntroductionArrowContainer = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 768px) {
+    top: 19px;
+    left: 55px;
+  }  
+`;
+
+export const ProfileArrowContainer = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 768px) {
+    top: 19px;
+    left: 56px;
+  }  
+`;
+
+export const TrainingArrowContainer = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 768px) {
+    top: 19px;
+    left: 55px;
+  }  
+`;
+
+export const LessonRequestArrowContainer = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 768px) {
+    top: 19px;
+    left: 55px; 
+  }  
+`;
+
+export const ArrowLine = styled.div`
+  width: 75px;
+  height: 3px;
+  background: #ccc;
+  @media only screen and (max-width: 768px) {
+    width: 24px;
+  }   
+`;
+
+export const Arrow = styled.img`
+  width: 5px;
 `;

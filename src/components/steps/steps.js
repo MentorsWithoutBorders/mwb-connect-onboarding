@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Main, LogoContainer, Logo, ArrowsContainer, ArrowContainer, ArrowLine, Arrow, StepsContainer, StepContainer, Icon } from './steps-styles.js';
+import { Main, LogoContainer, Logo, OptionContainer, IntroductionArrowContainer, ProfileArrowContainer, TrainingArrowContainer, LessonRequestArrowContainer, ArrowLine, Arrow, StepsContainer, StepContainer, Icon } from './steps-styles.js';
 import { StepText } from './step-text.js';
 import * as constants from 'utils/constants.js';
 import LogoImg from 'images/mwb-logo.png';
@@ -20,45 +20,53 @@ export const Steps = ({activeStep, goToIntroduction, goToProfile, goToTraining, 
     <Main>
       <LogoContainer>
         <Logo src={LogoImg} alt="MWB logo"/>
-      </LogoContainer>
-      <ArrowsContainer>
-        <ArrowContainer>
-          <ArrowLine/>
-          <Arrow src={ArrowImg}/>
-        </ArrowContainer>
-        <ArrowContainer>
-          <ArrowLine/>
-          <Arrow src={ArrowImg}/>
-        </ArrowContainer>
-        <ArrowContainer>
-          <ArrowLine/>
-          <Arrow src={ArrowImg}/>
-        </ArrowContainer>
-        <ArrowContainer>
-          <ArrowLine/>
-          <Arrow src={ArrowImg}/>
-        </ArrowContainer>
-      </ArrowsContainer>      
+      </LogoContainer>    
       <StepsContainer>
         <StepContainer onClick={goToIntroduction}>
-          <Icon src={activeStep === constants.MENTOR_INTRODUCTION ? IntroductionActiveIcon : IntroductionInactiveIcon} shouldMove={true} alt="Introduction"/>
-          <StepText number='1' text='Introduction' isActive={activeStep === constants.MENTOR_INTRODUCTION}/>
+          <OptionContainer>
+            <Icon src={activeStep === constants.MENTOR_INTRODUCTION ? IntroductionActiveIcon : IntroductionInactiveIcon} isShifted={true} alt="Introduction"/>
+            <StepText number='1' text='Introduction' isActive={activeStep === constants.MENTOR_INTRODUCTION}/>
+          </OptionContainer>
+          <IntroductionArrowContainer>
+            <ArrowLine/>
+            <Arrow src={ArrowImg}/>
+          </IntroductionArrowContainer>          
         </StepContainer>        
         <StepContainer onClick={goToProfile}>
-          <Icon src={activeStep === constants.MENTOR_PROFILE ? ProfileActiveIcon : ProfileInactiveIcon} alt="Profile" shouldMove={true}/>
-          <StepText number='2' text='Profile' isActive={activeStep === constants.MENTOR_PROFILE}/>
+          <OptionContainer>
+            <Icon src={activeStep === constants.MENTOR_PROFILE ? ProfileActiveIcon : ProfileInactiveIcon} alt="Profile"/>
+            <StepText number='2' text='Profile' isActive={activeStep === constants.MENTOR_PROFILE} isShifted={true}/>
+          </OptionContainer>
+          <ProfileArrowContainer>
+            <ArrowLine/>
+            <Arrow src={ArrowImg}/>
+          </ProfileArrowContainer>          
         </StepContainer>
         <StepContainer onClick={goToTraining}>
-          <Icon src={activeStep === constants.MENTOR_TRAINING ? TrainingActiveIcon : TrainingInactiveIcon} alt="Training"/>
-          <StepText number='3' text='Training' isActive={activeStep === constants.MENTOR_TRAINING}/>
+          <OptionContainer>
+            <Icon src={activeStep === constants.MENTOR_TRAINING ? TrainingActiveIcon : TrainingInactiveIcon} alt="Training"/>
+            <StepText number='3' text='Training' isActive={activeStep === constants.MENTOR_TRAINING} isShifted={true}/>
+          </OptionContainer>
+          <TrainingArrowContainer>
+            <ArrowLine/>
+            <Arrow src={ArrowImg}/>
+          </TrainingArrowContainer>          
         </StepContainer>
         <StepContainer onClick={goToLessonRequest}>
-          <Icon src={activeStep === constants.MENTOR_LESSON_REQUEST ? LessonRequestActiveIcon : LessonRequestInactiveIcon} alt="Lesson request"/>
-          <StepText number='4' text='Lesson request' isActive={activeStep === constants.MENTOR_LESSON_REQUEST} isLessonRequest={true}/>
+          <OptionContainer>
+            <Icon src={activeStep === constants.MENTOR_LESSON_REQUEST ? LessonRequestActiveIcon : LessonRequestInactiveIcon} alt="Lesson request"/>
+            <StepText number='4' text='Lesson request' isActive={activeStep === constants.MENTOR_LESSON_REQUEST} isShifted={true}/>
+          </OptionContainer>
+          <LessonRequestArrowContainer>
+            <ArrowLine/>
+            <Arrow src={ArrowImg}/>
+          </LessonRequestArrowContainer>          
         </StepContainer>
         <StepContainer onClick={goToDownload}>
-          <Icon src={activeStep === constants.MENTOR_DOWNLOAD_APP ? DownloadAppActiveIcon : DownloadAppInactiveIcon} alt="Download app"/>
-          <StepText number='5' text='Download app' isActive={activeStep === constants.MENTOR_DOWNLOAD_APP}/>
+          <OptionContainer>
+            <Icon src={activeStep === constants.MENTOR_DOWNLOAD_APP ? DownloadAppActiveIcon : DownloadAppInactiveIcon} alt="Download app"/>
+            <StepText number='5' text='Download app' isActive={activeStep === constants.MENTOR_DOWNLOAD_APP}/>
+          </OptionContainer>         
         </StepContainer>
       </StepsContainer>    
     </Main>
