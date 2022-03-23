@@ -9,7 +9,7 @@ export const Text = styled.div`
 
 export const TestimonialsLink = styled.a`
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: underline;
   color: #2db2ea;
 `;
@@ -33,7 +33,8 @@ export const OrganizationContainer = styled.a`
   background: white;
   border-radius: 20px;
   @media only screen and (max-width: 768px) {
-    width: 45%;
+    width: 40vw;
+    height: 18vh;
   }
 `;
 

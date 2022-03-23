@@ -14,7 +14,7 @@ export const Title = styled.div`
   text-align: center;
   color: #f45101;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: underline;
 `;
 

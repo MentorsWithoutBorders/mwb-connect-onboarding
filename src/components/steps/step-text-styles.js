@@ -44,7 +44,7 @@ export const Number = styled.div`
 export const Text = styled.div`
   font-size: 14px;
   color: #ccc;
-  font-weight: bold;
+  font-weight: 500;
   ${({ active }) => active && `
     color: #f45101;
   `}
