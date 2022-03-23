@@ -34,7 +34,7 @@ export const OrganizationContainer = styled.a`
   border-radius: 20px;
   @media only screen and (max-width: 768px) {
     width: 40vw;
-    height: 18vh;
+    height: 20vh;
   }
 `;
 
