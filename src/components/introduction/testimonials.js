@@ -24,7 +24,7 @@ export const Testimonials = ({testimonials, toggleModal}) => {
         >
           {testimonials.map(testimonial => {
             const photo = 'https://mentorswithoutborders.net/images/testimonials/students/' + testimonial.name.replaceAll(' ', '-') + '.jpg';
-            return <TestimonialContainer>
+            return <TestimonialContainer key={testimonial.position}>
               <PhotoContainer>
                 <Photo src={photo}/>
               </PhotoContainer>			    		

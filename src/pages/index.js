@@ -18,10 +18,46 @@ import { Background } from 'index-styles';
 export default class IndexPage extends React.Component {
   state = {
     activeStep: constants.MENTOR_INTRODUCTION,
+    activeStepEnabled: constants.MENTOR_INTRODUCTION,
     isOpenModal: false,
-    modalOpacity: 0
+    modalOpacity: 0,
+    slidesHeights: []
+  }
+  
+  componentDidMount() {
+    window.addEventListener('resize', this.updateSlidesHeights);
+    this.updateSlidesHeights();    
   }
 
+  updateSlidesHeights = () => {
+    setTimeout(() => {
+      this.setSlidesHeights();
+    }, 500);    
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateSlidesHeights);
+  }  
+  
+  setSlidesHeights() {
+    this.setState({
+      slidesHeights: [
+        this.setSlideHeight(this.introduction.clientHeight),
+        this.setSlideHeight(this.profile.clientHeight),
+        this.setSlideHeight(this.training.clientHeight),
+        this.setSlideHeight(this.lessonRequest.clientHeight),
+        this.setSlideHeight(this.downloadApp.clientHeight)
+      ]
+    })
+  }
+
+  setSlideHeight(height) {
+    if (height < window.innerHeight) {
+      return window.innerHeight + 50;
+    }
+    return height;
+  }
+  
   render() {
     const sliderSettings = {
       dots: false,
@@ -49,6 +85,10 @@ export default class IndexPage extends React.Component {
       this.setState({activeStep: index});
     };
 
+    const setActiveStepEnabled = (index) => {
+      this.setState({activeStepEnabled: index});
+    };    
+
     const scrollToTop = (index) => {
       setActiveStep(index);
       scroll.scrollToTop({
@@ -56,6 +96,9 @@ export default class IndexPage extends React.Component {
         delay: 0,
         smooth: true
       });
+      setTimeout(() => {
+        setActiveStepEnabled(index);
+      }, 500);
     };
 
     const scrollNext = () => {
@@ -112,29 +155,32 @@ export default class IndexPage extends React.Component {
         <Page>
           <title>MWB Connect Onboarding</title>
           <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
-          <Slider ref={slider => (this.slider = slider)} arrows={false} {...sliderSettings}>
-            <Slide>
-              <Container>
+          <Slider
+            ref={slider => (this.slider = slider)}
+            arrows={false}
+            {...sliderSettings}>
+            <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
+              <Container ref={(introduction) => { this.introduction = introduction }}>
                 <Introduction partners={this.props.data.postgres.partners} scrollNext={scrollNext} toggleModal={toggleModal}/>
               </Container> 
-            </Slide>            
-            <Slide>
-              <Container>
+            </Slide>
+            <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
+              <Container ref={(profile) => { this.profile = profile }}>
                 <Profile scrollNext={scrollNext} onClickDownload={goToDownload}/>
               </Container> 
             </Slide>  
-            <Slide>
-              <Container>
+            <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
+              <Container ref={(training) => { this.training = training }}>
                 <Training scrollNext={scrollNext} onClickDownload={goToDownload}/>
               </Container> 
             </Slide>
-            <Slide>
-              <Container>
+            <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
+              <Container ref={(lessonRequest) => { this.lessonRequest = lessonRequest }}>
                 <LessonRequest onClickDownload={goToDownload}/>
               </Container> 
             </Slide>
-            <Slide>
-              <Container>
+            <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
+              <Container ref={(downloadApp) => { this.downloadApp = downloadApp }}>
                 <DownloadApp/>
               </Container> 
             </Slide>

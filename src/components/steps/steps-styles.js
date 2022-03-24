@@ -55,7 +55,7 @@ export const Icon = styled.img`
     height: 48px;
     ${({ isShifted }) => isShifted && `
       margin-left: -3px;
-    `}      
+    `}
   }
 `;
 

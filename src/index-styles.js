@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
+import Slider from 'react-slick';
 
 export const Background = styled.div`
   background: radial-gradient(circle at center, #03378C, #01112b);
@@ -16,10 +17,11 @@ export const Page = styled.div`
   color: #ccc;
   @media only screen and (max-width: 768px) {
     color: #eee;
-  }  
+  }
 `;
 
 export const Slide = styled.div`
+  max-height: ${props => props.height}px;
   margin-top: 140px;
   display: flex !important;
   justify-content: center;
