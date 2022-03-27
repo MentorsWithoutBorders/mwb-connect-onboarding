@@ -19,7 +19,6 @@ export const Logo = styled.img`
 export const StepsContainer = styled.div`
   position: absolute;
   z-index: 1;
-  width: 100%; 
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -31,9 +30,9 @@ export const StepsContainer = styled.div`
 
 export const StepContainer = styled.div`
   position: relative;
-  width: 150px;
+  width: 180px;
   @media only screen and (max-width: 768px) {
-    width: 70px;
+    width: 85px;
   }    
 `;
 
@@ -62,61 +61,48 @@ export const Icon = styled.img`
 export const IntroductionArrowContainer = styled.div`
   position: absolute;
   top: 30px;
-  left: 112px;
+  left: 125px;
   display: flex;
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 768px) {
     top: 19px;
-    left: 55px;
+    left: 65px;
   }  
 `;
 
-export const ProfileArrowContainer = styled.div`
+export const ConnectWithMentorArrowContainer = styled.div`
   position: absolute;
   top: 30px;
-  left: 112px;
+  left: 125px;
   display: flex;
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 768px) {
     top: 19px;
-    left: 56px;
+    left: 65px; 
   }  
 `;
 
 export const TrainingArrowContainer = styled.div`
   position: absolute;
   top: 30px;
-  left: 110px;
+  left: 125px;
   display: flex;
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 768px) {
     top: 19px;
-    left: 55px;
-  }  
-`;
-
-export const LessonRequestArrowContainer = styled.div`
-  position: absolute;
-  top: 30px;
-  left: 110px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media only screen and (max-width: 768px) {
-    top: 19px;
-    left: 55px; 
+    left: 65px;
   }  
 `;
 
 export const ArrowLine = styled.div`
-  width: 75px;
+  width: 105px;
   height: 3px;
   background: #ccc;
   @media only screen and (max-width: 768px) {
-    width: 24px;
+    width: 35px;
   }   
 `;
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TextContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   ${({ isShifted }) => isShifted && `
     padding-left: 5px;
   `}

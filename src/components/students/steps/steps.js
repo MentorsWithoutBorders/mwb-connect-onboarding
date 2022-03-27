@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Main, LogoContainer, Logo, OptionContainer, IntroductionArrowContainer, TrainingArrowContainer, LessonRequestArrowContainer, ArrowLine, Arrow, StepsContainer, StepContainer, Icon } from './steps-styles.js';
+import { Main, LogoContainer, Logo, OptionContainer, IntroductionArrowContainer, TrainingArrowContainer, ConnectWithMentorArrowContainer, ArrowLine, Arrow, StepsContainer, StepContainer, Icon } from './steps-styles.js';
 import { StepText } from './step-text.js';
 import * as constants from 'utils/constants.js';
 import LogoImg from 'images/mwb-logo.png';
@@ -8,8 +8,8 @@ import IntroductionActiveIcon from 'images/introduction-active-icon.png';
 import IntroductionInactiveIcon from 'images/introduction-inactive-icon.png';
 import TrainingActiveIcon from 'images/training-active-icon.png';
 import TrainingInactiveIcon from 'images/training-inactive-icon.png';
-import LessonRequestActiveIcon from 'images/lesson-request-active-icon.png';
-import LessonRequestInactiveIcon from 'images/lesson-request-inactive-icon.png';
+import ConnectWithMentorActiveIcon from 'images/lesson-request-active-icon.png';
+import ConnectWithMentorInactiveIcon from 'images/lesson-request-inactive-icon.png';
 import DownloadAppActiveIcon from 'images/download-app-active-icon.png';
 import DownloadAppInactiveIcon from 'images/download-app-inactive-icon.png';
 
@@ -32,13 +32,13 @@ export const Steps = ({activeStep, goToIntroduction, goToConnectWithMentor, goTo
         </StepContainer>
         <StepContainer onClick={goToConnectWithMentor}>
           <OptionContainer>
-            <Icon src={activeStep === constants.STUDENT_CONNECT_WITH_MENTOR ? LessonRequestActiveIcon : LessonRequestInactiveIcon} alt="Connect with a mentor"/>
+            <Icon src={activeStep === constants.STUDENT_CONNECT_WITH_MENTOR ? ConnectWithMentorActiveIcon : ConnectWithMentorInactiveIcon} alt="Connect with a mentor"/>
             <StepText number='2' text='Connect with a mentor' isActive={activeStep === constants.STUDENT_CONNECT_WITH_MENTOR} isShifted={true}/>
           </OptionContainer>
-          <LessonRequestArrowContainer>
+          <ConnectWithMentorArrowContainer>
             <ArrowLine/>
             <Arrow src={ArrowImg}/>
-          </LessonRequestArrowContainer>          
+          </ConnectWithMentorArrowContainer>          
         </StepContainer>        
         <StepContainer onClick={goToTraining}>
           <OptionContainer>

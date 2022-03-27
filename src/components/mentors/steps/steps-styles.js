@@ -19,7 +19,6 @@ export const Logo = styled.img`
 export const StepsContainer = styled.div`
   position: absolute;
   z-index: 1;
-  width: 100%; 
   display: flex;
   align-items: flex-start;
   justify-content: center;
