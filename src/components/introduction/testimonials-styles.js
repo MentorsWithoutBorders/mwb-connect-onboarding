@@ -23,6 +23,9 @@ export const Title = styled.div`
   font-size: 20px;
   color: #666;
   margin-bottom: 30px;
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    margin-top: -25px;
+  }   
 `;
 
 export const TestimonialsContainer = styled.div`

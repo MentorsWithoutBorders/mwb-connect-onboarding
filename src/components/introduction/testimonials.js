@@ -1,9 +1,31 @@
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { isMobile } from 'react-device-detect';
 import { CloseContainer, Close, Title , TestimonialsContainer, TestimonialContainer, PhotoContainer, Photo, DescriptionContainer, DescriptionTextContainer, DescriptionText, Student, NameContainer, Name, Dash, Organization, OrganizationLink } from './testimonials-styles.js';
 import CloseImg from 'images/close-icon.png';
 
 export const Testimonials = ({testimonials, toggleModal}) => {
+  const [dimensions, setDimensions] = React.useState({ 
+    height: '57vh'
+  })
+
+  React.useEffect(() => {
+    function handleResize() {
+      if (isMobile) {
+        if (window.innerHeight > window.innerWidth) {
+          setDimensions({
+            height: '40vh'
+          })
+        } else {
+          setDimensions({
+            height: '54vh'
+          });        
+        }        
+      }
+    }
+    window.addEventListener('resize', handleResize);
+  })
+
   testimonials.sort((a,b) => {
     const reverseCompare = (a.position < b.position) ? -1 : 0;
     return a.position > b.position ? 1 : reverseCompare;
@@ -20,7 +42,7 @@ export const Testimonials = ({testimonials, toggleModal}) => {
         <Scrollbars
           thumbMinSize={100}
           autoHeight
-          autoHeightMin={'57vh'}
+          autoHeightMin={dimensions.height}
         >
           {testimonials.map(testimonial => {
             const photo = 'https://mentorswithoutborders.net/images/testimonials/students/' + testimonial.name.replaceAll(' ', '-') + '.jpg';
