@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Modal, { BaseModalBackground } from 'styled-react-modal';
-import Slider from 'react-slick';
 
 export const Background = styled.div`
   background: radial-gradient(circle at center, #03378C, #01112b);

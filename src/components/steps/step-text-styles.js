@@ -16,7 +16,7 @@ export const NumberContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18px;
+  width: 19px;
   height: 19px;
   border-radius: 50%;
   background-color: #ddd;

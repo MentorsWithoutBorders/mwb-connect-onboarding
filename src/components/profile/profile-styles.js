@@ -180,5 +180,6 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   align-content: space-between;
+  margin: 0 20px;  
   margin-bottom: 50px;
 `;
