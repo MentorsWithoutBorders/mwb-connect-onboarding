@@ -16,5 +16,15 @@ module.exports = {
         schema: 'public',
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'MWB Connect Onboarding',
+        start_url: '/',
+        display: 'standalone',
+        icon: 'src/images/mwb-icon.png', 
+        crossOrigin: `use-credentials`,
+      },
+    },    
   ],
 }

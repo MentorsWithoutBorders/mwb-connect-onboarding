@@ -24,6 +24,9 @@ export const Testimonials = ({testimonials, toggleModal}) => {
       }
     }
     window.addEventListener('resize', handleResize);
+    return _ => {
+      window.removeEventListener('resize', handleResize)
+    }    
   })
 
   testimonials.sort((a,b) => {
