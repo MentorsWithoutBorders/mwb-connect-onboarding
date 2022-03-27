@@ -15,30 +15,29 @@ import { DownloadApp } from 'components/download-app/download-app.js';
 import { Testimonials } from 'components/introduction/testimonials.js';
 import { Background } from 'index-styles';
 
+const MAX_SLIDE_HEIGHT = 5000;
+const SLIDER_SPEED = 500;
+const SCROLL_TO_TOP_SPEED = 400;
+const SLIDE_BLOCKED_TIME = 200;
+
 export default class IndexPage extends React.Component {
   state = {
     activeStep: constants.MENTOR_INTRODUCTION,
     activeStepEnabled: constants.MENTOR_INTRODUCTION,
     isOpenModal: false,
     modalOpacity: 0,
-    slidesHeights: []
+    slidesHeights: [],
+    isTransitionFinished: true,
+    isSwipeAllowed: true
   }
-  
+
   componentDidMount() {
-    window.addEventListener('resize', this.updateSlidesHeights);
-    this.updateSlidesHeights();    
-  }
-
-  updateSlidesHeights = () => {
     setTimeout(() => {
+      this.resetSlidesHeights();
       this.setSlidesHeights();
-    }, 500);    
+    }, 600);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateSlidesHeights);
-  }  
-  
   setSlidesHeights() {
     this.setState({
       slidesHeights: [
@@ -47,6 +46,18 @@ export default class IndexPage extends React.Component {
         this.setSlideHeight(this.training.clientHeight),
         this.setSlideHeight(this.lessonRequest.clientHeight),
         this.setSlideHeight(this.downloadApp.clientHeight)
+      ]
+    })
+  }
+
+  resetSlidesHeights() {
+    this.setState({
+      slidesHeights: [
+        this.setSlideHeight(MAX_SLIDE_HEIGHT),
+        this.setSlideHeight(MAX_SLIDE_HEIGHT),
+        this.setSlideHeight(MAX_SLIDE_HEIGHT),
+        this.setSlideHeight(MAX_SLIDE_HEIGHT),
+        this.setSlideHeight(MAX_SLIDE_HEIGHT)
       ]
     })
   }
@@ -62,11 +73,10 @@ export default class IndexPage extends React.Component {
     const sliderSettings = {
       dots: false,
       infinite: false,
-      speed: 500,
+      speed: SLIDER_SPEED,
       slidesToShow: 1,
       slidesToScroll: 1,
-      onSwipe: (direction) => setActiveStepOnScroll(direction),
-      afterChange: (index) => scrollToTop(index)
+      onSwipe: (direction) => setActiveStepOnScroll(direction)
     };
 
     const setActiveStepOnScroll = (direction) => {
@@ -82,23 +92,60 @@ export default class IndexPage extends React.Component {
     };    
 
     const setActiveStep = (index) => {
+      setIsTransitionFinished(false);
       this.setState({activeStep: index});
+      setTimeout(() => {
+        setIsSwipeAllowed(true);
+        setTimeout(() => {
+          setIsSwipeAllowed(true);
+        }, SLIDE_BLOCKED_TIME);        
+      }, SLIDER_SPEED); 
+      setTimeout(() => {
+        scrollToTop();
+        if (isStepsInViewport()) {
+          setActiveStepEnabled(index);
+          this.resetSlidesHeights();
+          this.setSlidesHeights();
+          setTimeout(() => {
+            setIsTransitionFinished(true);
+          }, 50);
+        } else {
+          setTimeout(() => {
+            setActiveStepEnabled(index);
+            this.resetSlidesHeights();
+            this.setSlidesHeights();
+            setTimeout(() => {
+              setIsTransitionFinished(true);
+            }, 50);       
+          }, SCROLL_TO_TOP_SPEED);         
+        }
+      }, SLIDER_SPEED + 50);      
     };
 
     const setActiveStepEnabled = (index) => {
       this.setState({activeStepEnabled: index});
-    };    
+    }
+  
+    const setIsTransitionFinished = (isTransitionFinished) => {
+      this.setState({isTransitionFinished});
+    }
 
-    const scrollToTop = (index) => {
-      setActiveStep(index);
+    const setIsSwipeAllowed = (isSwipeAllowed) => {
+      this.setState({isSwipeAllowed});
+    }    
+
+    const isStepsInViewport = () => {
+      if (!this.steps) return false;
+      const top = this.steps.getBoundingClientRect().top;
+      return (top + 300) >= 0 && (top - 300) <= window.innerHeight;
+    }    
+
+    const scrollToTop = () => {
       scroll.scrollToTop({
-        duration: 400,
+        duration: SCROLL_TO_TOP_SPEED,
         delay: 0,
         smooth: true
-      });
-      setTimeout(() => {
-        setActiveStepEnabled(index);
-      }, 500);
+      });      
     };
 
     const scrollNext = () => {
@@ -107,28 +154,38 @@ export default class IndexPage extends React.Component {
     };
 
     const goToIntroduction = () => {
-      setActiveStep(constants.MENTOR_INTRODUCTION);
-      this.slider.slickGoTo(constants.MENTOR_INTRODUCTION);
+      if (this.state.isTransitionFinished) {
+        setActiveStep(constants.MENTOR_INTRODUCTION);
+        this.slider.slickGoTo(constants.MENTOR_INTRODUCTION);
+      }
     };    
     
     const goToProfile = () => {
-      setActiveStep(constants.MENTOR_PROFILE);
-      this.slider.slickGoTo(constants.MENTOR_PROFILE);
+      if (this.state.isTransitionFinished) {      
+        setActiveStep(constants.MENTOR_PROFILE);
+        this.slider.slickGoTo(constants.MENTOR_PROFILE);
+      }
     };
 
     const goToTraining = () => {
-      setActiveStep(constants.MENTOR_TRAINING);
-      this.slider.slickGoTo(constants.MENTOR_TRAINING);
+      if (this.state.isTransitionFinished) {      
+        setActiveStep(constants.MENTOR_TRAINING);
+        this.slider.slickGoTo(constants.MENTOR_TRAINING);
+      }
     };
 
     const goToLessonRequest = () => {
-      setActiveStep(constants.MENTOR_LESSON_REQUEST);
-      this.slider.slickGoTo(constants.MENTOR_LESSON_REQUEST);
+      if (this.state.isTransitionFinished) {      
+        setActiveStep(constants.MENTOR_LESSON_REQUEST);
+        this.slider.slickGoTo(constants.MENTOR_LESSON_REQUEST);
+      }
     };     
 
     const goToDownload = () => {
-      setActiveStep(constants.MENTOR_DOWNLOAD_APP);
-      this.slider.slickGoTo(constants.MENTOR_DOWNLOAD_APP);
+      if (this.state.isTransitionFinished) {      
+        setActiveStep(constants.MENTOR_DOWNLOAD_APP);
+        this.slider.slickGoTo(constants.MENTOR_DOWNLOAD_APP);
+      }
     };
 
     const toggleModal = (e) => {
@@ -154,33 +211,38 @@ export default class IndexPage extends React.Component {
         <Background/>
         <Page>
           <title>MWB Connect Onboarding</title>
-          <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
+          <div ref={(steps) => this.steps = steps}>
+            <Steps activeStep={this.state.activeStep} goToIntroduction={goToIntroduction} goToProfile={goToProfile} goToTraining={goToTraining} 
+            goToLessonRequest={goToLessonRequest} goToDownload={goToDownload}/>
+          </div>
           <Slider
             ref={slider => (this.slider = slider)}
             arrows={false}
+            useTransform={false}
+            swipe={this.state.isSwipeAllowed}
             {...sliderSettings}>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
-              <Container ref={(introduction) => { this.introduction = introduction }}>
+              <Container ref={(introduction) => this.introduction = introduction}>
                 <Introduction partners={this.props.data.postgres.partners} scrollNext={scrollNext} toggleModal={toggleModal}/>
               </Container> 
             </Slide>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
-              <Container ref={(profile) => { this.profile = profile }}>
+              <Container ref={(profile) => this.profile = profile}>
                 <Profile scrollNext={scrollNext} onClickDownload={goToDownload}/>
               </Container> 
             </Slide>  
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
-              <Container ref={(training) => { this.training = training }}>
+              <Container ref={(training) => this.training = training }>
                 <Training scrollNext={scrollNext} onClickDownload={goToDownload}/>
               </Container> 
             </Slide>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
-              <Container ref={(lessonRequest) => { this.lessonRequest = lessonRequest }}>
+              <Container ref={(lessonRequest) => this.lessonRequest = lessonRequest}>
                 <LessonRequest onClickDownload={goToDownload}/>
               </Container> 
             </Slide>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
-              <Container ref={(downloadApp) => { this.downloadApp = downloadApp }}>
+              <Container ref={(downloadApp) => this.downloadApp = downloadApp}>
                 <DownloadApp/>
               </Container> 
             </Slide>

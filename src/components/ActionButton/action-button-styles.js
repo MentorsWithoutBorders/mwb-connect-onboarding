@@ -14,4 +14,13 @@ export const StyledActionButton = styled.a`
     background: #268EBA;
     cursor: pointer;
   }
+  @media only screen and (max-width: 768px) {
+    &:hover {
+      background: transparent;
+    }
+    &:active {
+      background: #268EBA;
+      cursor: pointer;
+    }    
+  }    
 `;
