@@ -28,28 +28,28 @@ export const TrainingContainer = styled.div`
   }
 `;
 
-export const GoalContainer = styled.div`
+export const TrainingGoContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
 `;
 
-export const GoalScreen = styled.img`
+export const TrainingGoScreen = styled.img`
   width: 300px;
   @media only screen and (max-width: 768px) {
     width: 220px;
   }   
 `;
 
-export const GoalRight = styled.div`
-  padding: 177px 0 0 5px;
+export const TrainingGoRight = styled.div`
+  padding: 287px 0 0 5px;
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;    
-    padding: 132px 0 0 3px;
+    padding: 212px 0 0 3px;
   }
 `;
 
-export const AddGoalArrowContainer = styled.div`
+export const TrainingGoArrowContainer = styled.div`
   width: 200px;
   display: flex;
   padding-bottom: 5px;
@@ -58,7 +58,7 @@ export const AddGoalArrowContainer = styled.div`
   }
 `;
 
-export const AddGoal = styled.div`
+export const TrainingGo = styled.div`
   width: 200px;
   font-size: 14px;
   text-align: center;
@@ -78,7 +78,7 @@ export const QuizLeft = styled.div`
   padding: 300px 5px 0 0;
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;        
-    padding: 222px 3px 0 0;
+    padding: 221px 3px 0 0;
   }  
 `;
 
@@ -123,10 +123,10 @@ export const StepsScreen = styled.img`
 `;
 
 export const StepsRight = styled.div`
-  padding: 300px 0 0 5px;
+  padding: 346px 0 0 5px;
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;    
-    padding: 221px 0 0 3px;
+    padding: 254px 0 0 3px;
   }   
 `;
 
