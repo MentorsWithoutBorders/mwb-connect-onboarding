@@ -12,15 +12,9 @@ export const Testimonials = ({testimonials, toggleModal}) => {
   React.useEffect(() => {
     function handleResize() {
       if (isMobile) {
-        if (window.innerHeight > window.innerWidth) {
-          setDimensions({
-            height: '40vh'
-          })
-        } else {
-          setDimensions({
-            height: '54vh'
-          });        
-        }        
+        setDimensions({
+          height: '54vh'
+        });       
       }
     }
     window.addEventListener('resize', handleResize);
