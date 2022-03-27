@@ -41,7 +41,7 @@ export const ProfileLeft = styled.div`
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;
     width: 140px;
-    padding: 80px 2px 0 0;
+    padding: 79px 2px 0 0;
   }   
 `;
 
@@ -52,7 +52,7 @@ export const ProfileRight = styled.div`
 export const ChooseFieldContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 `;
 
 export const ChooseField = styled.div`
@@ -85,7 +85,7 @@ export const AddSkillsContainer = styled.div`
   align-items: center;
   margin-bottom: 120px;
   @media only screen and (max-width: 768px) {
-    margin-bottom: 122px;
+    margin-bottom: 124px;
   }  
 `;
 
@@ -118,7 +118,7 @@ export const AddSubfieldsContainer = styled.div`
   align-items: center;
   margin-bottom: 2px;
   @media only screen and (max-width: 768px) {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
   }  
 `;
 

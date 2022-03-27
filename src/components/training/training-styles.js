@@ -45,7 +45,7 @@ export const GoalRight = styled.div`
   padding: 177px 0 0 5px;
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;    
-    padding: 130px 0 0 3px;
+    padding: 132px 0 0 3px;
   }
 `;
 
@@ -78,7 +78,7 @@ export const QuizLeft = styled.div`
   padding: 300px 5px 0 0;
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;        
-    padding: 220px 3px 0 0;
+    padding: 222px 3px 0 0;
   }  
 `;
 
@@ -126,7 +126,7 @@ export const StepsRight = styled.div`
   padding: 300px 0 0 5px;
   @media only screen and (max-width: 768px) {
     font-family: 'Roboto Condensed', sans-serif;    
-    padding: 220px 0 0 3px;
+    padding: 221px 0 0 3px;
   }   
 `;
 
