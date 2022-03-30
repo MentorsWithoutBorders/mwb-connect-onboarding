@@ -15,3 +15,11 @@ export const validatePhoneNumber = (phoneNumber) => {
     );
 };
 
+export const getIsMentor = () => {
+  return window.location.href.indexOf('students') < 0;
+};
+
+export const getOrganizationName = () => {
+  return window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+};
+

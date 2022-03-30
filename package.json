@@ -5,6 +5,7 @@
   "description": "MWB Connect Onboarding",
   "author": "Edmond Pruteanu",
   "dependencies": {
+    "axios": "^0.26.1",
     "babel-plugin-styled-components": "^2.0.6",
     "gatsby": "^4.2.0",
     "gatsby-plugin-manifest": "^4.10.2",

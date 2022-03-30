@@ -1,14 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import * as helpers from 'utils/helpers.js';
 import { Mentors } from 'components/mentors/mentors.js';
 import { Students } from 'components/students/students.js';
 
 export default class IndexPage extends React.Component {
   render() {
-    return (
-      // <Mentors partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials}/>
-      <Students/>
-    )
+    if (helpers.getIsMentor()) {
+      return (
+        <Mentors partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials}/>
+      )
+    } else {
+      return (
+        <Students/>
+      )      
+    }
   }
 }
 

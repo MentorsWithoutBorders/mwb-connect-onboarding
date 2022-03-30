@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 import * as helpers from 'utils/helpers.js';
 import { ActionButton } from 'components/ActionButton/action-button.js';
 import { DownloadContainer, Download, Text, FormContainer, FormWrapper, IconContainer, EmailIcon, WhatsAppIcon, InputContainer, StyledInput, InputError, InputSeparator, ButtonsContainer } from './download-app-styles.js';
@@ -49,21 +50,43 @@ export const DownloadApp = () => {
     setShowNumberError(false);
   }
 
-  const submitForm = () => {
+  const handleSubmit = () => {
     if (!helpers.validateEmail(email)) {
       setShowEmailError(true);
     }
     if (!helpers.validatePhoneNumber(number)) {
       setShowNumberError(true);
-    } 
+    }
+    if (helpers.validateEmail(email) && helpers.validatePhoneNumber(number)) {
+      setShowLinks(true);
+      const approvedUser = {
+        email: email,
+        whatsappNumber: number,
+        organization: {
+          name: helpers.getOrganizationName()
+        },
+        isMentor: false
+      }
+      axios.post('http://localhost:3000/api/v1/approved_user', approvedUser)
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        })
+    }
   }
+
+  const emailInputError = showEmailError ? <InputError>Please enter a valid email address</InputError> : null;
+  const numberInputError = showNumberError ? <InputError >Please enter a valid WhatsApp number</InputError> : null;
 
   return (
     <div>
+      {!showLinks ? <Text>
+        In order to download and sign up in the MWB Connect mobile app, please enter your email address and WhatsApp number:        
+      </Text> : 
       <Text>
-        You can download the MWB Connect app using the following links:        
-      </Text>
-      <FormContainer>
+        Thank you and please download the MWB Connect app using one of the following links:
+      </Text> }
+      {!showLinks ? <FormContainer>
         <FormWrapper>
           <InputContainer isActive={isEmailActive}>
             <IconContainer>
@@ -78,7 +101,7 @@ export const DownloadApp = () => {
               placeholder="Your email address"
               isClickedOutside={isEmailActive}/>          
           </InputContainer>
-          {showEmailError ? <InputError>Please enter a valid email address</InputError> : null}
+          {emailInputError}
           <InputSeparator/>
           <InputContainer isActive={isNumberActive}>
             <IconContainer>
@@ -91,22 +114,21 @@ export const DownloadApp = () => {
               onChange={e => setNumberValue(e.target.value)} 
               onClick={e => setNumberActive(true)}
               placeholder="Your WhatsApp number"/>  
-          </InputContainer>          
-          {showNumberError ? <InputError >Please enter a valid WhatsApp number</InputError> : null}
+          </InputContainer>
+          {numberInputError}
         </FormWrapper>
-      </FormContainer>
-      <ButtonsContainer>
-        <ActionButton text="Show download links" onClick={submitForm}/>
-      </ButtonsContainer>      
-      {showLinks ? 
-        <DownloadContainer>
+      </FormContainer> : null}
+      {!showLinks ? <ButtonsContainer>
+        <ActionButton text="Show download links" onClick={handleSubmit}/>
+      </ButtonsContainer> : 
+      <DownloadContainer>
           <a href="https://apps.apple.com/us/app/mwb-connect/id1582502052#?platform=iphone" target="_blank">
             <Download src={AppStoreImg} alt="App Store" />
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.mwbconnect.app" target="_blank">
             <Download src={GooglePlayImg} alt="Google Play" />
           </a>
-        </DownloadContainer> : null}  
+        </DownloadContainer>}  
     </div>
   )
 }
