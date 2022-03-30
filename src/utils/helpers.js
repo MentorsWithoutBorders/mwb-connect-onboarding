@@ -20,6 +20,15 @@ export const getIsMentor = () => {
 };
 
 export const getOrganizationName = () => {
-  return window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  let organizationName = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  organizationName = replaceAll(organizationName, '-', ' ');
+  return organizationName;
 };
 
+export const replaceAll = (str, find, replace) => {
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+export const escapeRegExp = (string) => {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
