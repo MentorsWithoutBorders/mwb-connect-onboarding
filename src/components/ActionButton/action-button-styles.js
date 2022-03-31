@@ -19,7 +19,9 @@ export const StyledActionButton = styled.a`
   }
   @media only screen and (max-width: 768px) {
     &:hover {
-      background: transparent;
+      background: #F25004;
+      color: white;
+      box-shadow: none;
     }
     &:active {
       background: white;

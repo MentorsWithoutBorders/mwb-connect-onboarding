@@ -202,7 +202,7 @@ export class Mentors extends React.Component {
         this.setState({modalOpacity: 0});
         setTimeout(resolve, 300);
       });
-    }    
+    }
 
     return (
       <ModalProvider backgroundComponent={FadingBackground}>
@@ -241,7 +241,7 @@ export class Mentors extends React.Component {
             </Slide>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
               <Container ref={(downloadApp) => this.downloadApp = downloadApp}>
-                <DownloadApp/>
+                <DownloadApp location={this.props.location}/>
               </Container> 
             </Slide>
           </Slider>

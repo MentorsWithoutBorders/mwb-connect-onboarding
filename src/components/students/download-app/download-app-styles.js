@@ -33,9 +33,9 @@ export const InputContainer = styled.div`
     border-color: #F95F05;
     box-shadow: 0 0 10px #F95F05;
   `};
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) { 
     width: 300px;
-  }    
+  }
 `;
 
 export const StyledInput = styled.input`
@@ -67,7 +67,10 @@ export const StyledInput = styled.input`
   }
   @media only screen and (max-width: 768px) {
     width: 251px;
-  }   
+  }
+  ${({ isIOS }) => isIOS && `
+    margin-top: -2px;
+  `};  
 `;
 
 export const IconContainer = styled.div`
@@ -102,10 +105,6 @@ export const InputError = styled.div`
 export const DownloadContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 30px;
-  @media only screen and (max-width: 768px) {
-    gap: 15px;
-  }  
 `;
 
 export const Download = styled.img`
@@ -113,6 +112,13 @@ export const Download = styled.img`
   @media only screen and (max-width: 768px) {
     height: 50px;
   }
+`;
+
+export const DownloadGap = styled.div`
+  width: 30px;
+  ${({ isMobile }) => isMobile && `
+    width: 0;
+  `};
 `;
 
 export const ButtonsContainer = styled.div`
