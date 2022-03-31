@@ -4,6 +4,8 @@ export const Text = styled.div`
   text-align: center;
   margin: 30px;
   @media only screen and (max-width: 768px) {
+    text-align: left;
+    margin: 0 0 30px 0;
     padding: 0 20px;
   }
 `;
@@ -31,6 +33,9 @@ export const InputContainer = styled.div`
     border-color: #F95F05;
     box-shadow: 0 0 10px #F95F05;
   `};
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+  }  
 `;
 
 export const StyledInput = styled.input`
@@ -60,6 +65,9 @@ export const StyledInput = styled.input`
   :-ms-input-placeholder {
     color: #aaa;
   }
+  @media only screen and (max-width: 768px) {
+    width: 251px;
+  }  
 `;
 
 export const IconContainer = styled.div`

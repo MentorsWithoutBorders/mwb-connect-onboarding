@@ -14,7 +14,7 @@ export const DownloadApp = () => {
   const [showLinks, setShowLinks] = useState(false);
   const emailRef = useRef(null);
 
-  const useClickedOutside = (ref, type) => {
+  const useClickedOutside = (ref) => {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
@@ -28,7 +28,7 @@ export const DownloadApp = () => {
     }, [isEmailActive]);
   }  
 
-  useClickedOutside(emailRef, 'email');
+  useClickedOutside(emailRef);
 
   const setEmailValue = (value) => {
     setEmail(value);
