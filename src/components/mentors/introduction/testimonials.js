@@ -62,7 +62,7 @@ export const Testimonials = ({testimonials, toggleModal}) => {
                 </NameContainer>
                 <Dash> - </Dash>
                 <Organization>
-                  <OrganizationLink href={testimonial.partnerNgoUrl} target="_blank">{testimonial.partnerNgo}</OrganizationLink>
+                  <OrganizationLink href={testimonial.partnerNgoUrl} target="_blank" rel="noreferrer">{testimonial.partnerNgo}</OrganizationLink>
                 </Organization>
               </Student>
             </TestimonialContainer>

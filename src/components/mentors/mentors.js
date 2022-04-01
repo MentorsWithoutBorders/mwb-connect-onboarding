@@ -29,12 +29,12 @@ export class Mentors extends React.Component {
     isSwipeAllowed: true
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.resetSlidesHeights();
-      this.setSlidesHeights();
-    }, 600);
-  }
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.resetSlidesHeights();
+  //     this.setSlidesHeights();
+  //   }, 600);
+  // }
 
   setSlidesHeights() {
     this.setState({
@@ -241,7 +241,7 @@ export class Mentors extends React.Component {
             </Slide>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
               <Container ref={(downloadApp) => this.downloadApp = downloadApp}>
-                <DownloadApp location={this.props.location}/>
+                <DownloadApp organizationId={this.props.organizationId}/>
               </Container> 
             </Slide>
           </Slider>

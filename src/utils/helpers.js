@@ -15,13 +15,16 @@ export const validatePhoneNumber = (phoneNumber) => {
     );
 };
 
-export const getIsMentor = (url) => {
-  console.log(url);
-  return url ? url.indexOf('students') < 0 : true;
+export const getIsFromOrganization = (pathname) => {
+  return pathname !== '/' && pathname.indexOf('students') < 0 && pathname.indexOf('mentors') < 0;
 };
 
-export const getOrganizationName = (url) => {
-  let organizationName = url && url.location ? url.location.substring(url.lastIndexOf('/') + 1) : '';
+export const getIsMentor = (pathname) => {
+  return pathname ? pathname.indexOf('students') < 0 : true;
+};
+
+export const getOrganizationName = (pathname) => {
+  let organizationName = pathname.substring(1);
   organizationName = replaceAll(organizationName, '-', ' ');
   return organizationName;
 };

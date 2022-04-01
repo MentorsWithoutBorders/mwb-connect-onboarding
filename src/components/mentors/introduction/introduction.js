@@ -28,7 +28,7 @@ export const Introduction = ({partners, scrollNext, toggleModal}) => {
       <OrganizationsContainer>
         {partners.map(partner => {
           const logo = 'https://mentorswithoutborders.net/images/partners/' + partner.logo + '.png';
-          return <OrganizationContainer key={partner.position} href={partner.url} target="_blank">
+          return <OrganizationContainer key={partner.position} href={partner.url} target="_blank" rel="noreferrer">
             <Organization src={logo} title={partner.name} alt={partner.name}/>
           </OrganizationContainer>
         })}

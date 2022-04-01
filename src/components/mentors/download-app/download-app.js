@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { isIOS, isAndroid } from 'react-device-detect';
-import axios from 'axios';
 import * as helpers from 'utils/helpers.js';
+import * as apiService from 'api/api_service.js';
 import { ActionButton } from 'components/ActionButton/action-button.js';
 import { Text, FormContainer, FormWrapper, IconContainer, EmailIcon, InputContainer, StyledInput, InputError, ButtonsContainer, DownloadContainer, Download, DownloadGap } from './download-app-styles.js';
 import EmailIconImg from 'images/email-icon.png';
 import AppStoreImg from 'images/download-app-store.png';
 import GooglePlayImg from 'images/download-google-play.png';
 
-export const DownloadApp = (location) => {
+export const DownloadApp = ({organizationId}) => {
   const [email, setEmail] = useState('');
   const [isEmailActive, setEmailActive] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
@@ -56,23 +56,19 @@ export const DownloadApp = (location) => {
       const approvedUser = {
         email: email,
         organization: {
-          name: helpers.getOrganizationName(location)
+          id: organizationId
         },
         isMentor: true
       }
-      axios.post(process.env.API_URL + '/approved_user', approvedUser)
-        .then(res => {
-          console.log(res);
-          console.log(res.data);
-        })
+      apiService.sendApprovedUser(approvedUser);
     }
   }
 
   const emailInputError = showEmailError ? <InputError>Please enter a valid email address</InputError> : null;
-  const iOSLink = !isMobileAndroid ? <a href="https://apps.apple.com/us/app/mwb-connect/id1582502052#?platform=iphone" target="_blank">
+  const iOSLink = !isMobileAndroid ? <a href="https://apps.apple.com/us/app/mwb-connect/id1582502052#?platform=iphone" target="_blank" rel="noreferrer">
       <Download src={AppStoreImg} alt="App Store" />
     </a> : null;
-  const androidLink = !isMobileIOS ? <a href="https://play.google.com/store/apps/details?id=com.mwbconnect.app" target="_blank">
+  const androidLink = !isMobileIOS ? <a href="https://play.google.com/store/apps/details?id=com.mwbconnect.app" target="_blank" rel="noreferrer">
       <Download src={GooglePlayImg} alt="Google Play" />
     </a> : null;
   const downloadText = isMobileAndroid || isMobileIOS ? 'Thank you and please download the MWB Connect app using the following link:' : 
