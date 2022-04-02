@@ -4,7 +4,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import * as helpers from 'utils/helpers.js';
 import * as apiService from 'api/api_service.js';
 import { ActionButton } from 'components/ActionButton/action-button.js';
-import { Text, FormContainer, FormWrapper, IconContainer, EmailIcon, InputContainer, StyledInput, InputError, ButtonsContainer, DownloadContainer, Download, DownloadGap } from './download-app-styles.js';
+import { Text, FormContainer, FormWrapper, IconContainer, EmailIcon, InputContainer, StyledInput, InputError, ButtonsContainer, DownloadContainer, Download, DownloadGap } from 'common/styles/download-app-styles.js';
 import EmailIconImg from 'images/email-icon.png';
 import AppStoreImg from 'images/download-app-store.png';
 import GooglePlayImg from 'images/download-google-play.png';
