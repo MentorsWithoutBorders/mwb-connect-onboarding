@@ -141,7 +141,7 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
               value={phoneNumber}
               onChange={e => setPhoneNumberValue(e.target.value)} 
               onClick={e => setPhoneNumberActive(true)}
-              placeholder="Your WhatsApp phoneNumber"
+              placeholder="Your WhatsApp number"
               isIOS={isMobileIOS}/>  
           </InputContainer>
           {phoneNumberInputError}
