@@ -58,11 +58,11 @@ export default class IndexPage extends React.Component {
       case undefined:
         return <Loader/>;
       case true:
-        return <Mentors organizationId={this.state.organizationId} partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials}/>; 
+        return <Mentors organizationId={this.state.organizationId} partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials}/>;
       case false:
         return <Students organizationId={this.state.organizationId} countryCallingCode={this.state.countryCallingCode}/>;
       default:
-        return 'foo';
+        return <Loader/>;
     }
   }  
 

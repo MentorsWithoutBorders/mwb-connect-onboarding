@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { isIOS, isAndroid } from 'react-device-detect';
+import { animateScroll as scroll } from 'react-scroll';
 import * as helpers from 'utils/helpers.js';
 import * as apiService from 'api/api_service.js';
 import { ActionButton } from 'components/ActionButton/action-button.js';
@@ -62,6 +63,14 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
     setShowPhoneNumberError(false);
   }
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 300,
+      delay: 0,
+      smooth: true
+    });
+  };   
+
   const handleSubmit = () => {
     if (!helpers.validateEmail(email)) {
       setShowEmailError(true);
@@ -70,6 +79,7 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
       setShowPhoneNumberError(true);
     }
     if (helpers.validateEmail(email) && helpers.validatePhoneNumber(phoneNumber)) {
+      scrollToTop();
       setShowLinks(true);
       const approvedUser = {
         email: email,
@@ -79,7 +89,6 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
         },
         isMentor: false
       }
-      console.log(approvedUser);
       apiService.sendApprovedUser(approvedUser);
     }
   }

@@ -29,13 +29,6 @@ export class Mentors extends React.Component {
     isSwipeAllowed: true
   }
 
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     this.resetSlidesHeights();
-  //     this.setSlidesHeights();
-  //   }, 600);
-  // }
-
   setSlidesHeights() {
     this.setState({
       slidesHeights: [
