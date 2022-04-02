@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { animateScroll as scroll } from 'react-scroll';
 import { ModalProvider } from 'styled-react-modal';
-import { Background, Page, Slide, Container, StyledModal, FadingBackground } from 'common/styles/common-styles.js';
+import { Page, Slide, Container, StyledModal, FadingBackground } from 'common/styles/common-styles.js';
 import * as constants from 'utils/constants.js';
 import { Steps } from './steps/steps.js';
 import { Introduction } from './introduction/introduction.js';
@@ -206,7 +206,6 @@ export class Mentors extends React.Component {
 
     return (
       <ModalProvider backgroundComponent={FadingBackground}>
-        <Background/>
         <Page>
           <title>MWB Connect Onboarding</title>
           <div ref={(steps) => this.steps = steps}>

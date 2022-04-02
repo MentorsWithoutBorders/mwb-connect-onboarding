@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import * as helpers from 'utils/helpers.js';
 import * as apiService from 'api/api_service.js';
+import { Background } from 'common/styles/common-styles.js';
 import { Mentors } from 'components/mentors/mentors.js';
 import { Students } from 'components/students/students.js';
 import { Loader } from '../components/Loader/loader';
@@ -68,6 +69,7 @@ export default class IndexPage extends React.Component {
   render() {
     return (
       <div>
+        <Background/>
         {this.renderSwitch()}
       </div>
     )

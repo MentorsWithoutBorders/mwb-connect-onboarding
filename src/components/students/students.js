@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { animateScroll as scroll } from 'react-scroll';
-import { Background, Page, Slide, Container } from 'common/styles/common-styles.js';
+import { Page, Slide, Container } from 'common/styles/common-styles.js';
 import * as constants from 'utils/constants.js';
 import { Steps } from './steps/steps.js';
 import { Introduction } from './introduction/introduction.js';
@@ -176,7 +176,6 @@ export class Students extends React.Component {
 
     return (
       <div>
-        <Background/>
         <Page>
           <title>MWB Connect Onboarding</title>
           <div ref={(steps) => this.steps = steps}>
