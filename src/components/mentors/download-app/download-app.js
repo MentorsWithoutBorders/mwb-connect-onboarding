@@ -102,6 +102,7 @@ export const DownloadApp = ({organizationId}) => {
             <StyledInput
               ref={emailRef}
               name="email"
+              type="email"
               value={email}
               onChange={e => setEmailValue(e.target.value)} 
               onClick={e => setEmailActive(true)}
