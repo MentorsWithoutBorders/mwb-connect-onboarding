@@ -18,3 +18,14 @@ export const getOrganization = async (pathname) => {
   } 
   return organization;
 };
+
+export const getCountryCallingCode = async () => {
+  let countryCallingCode;
+  try {
+    const response = await axios.get('https://ipapi.co/json/');
+    countryCallingCode = response.data.country_calling_code;
+  } catch (err) {
+    console.error(err);
+  } 
+  return countryCallingCode;
+};

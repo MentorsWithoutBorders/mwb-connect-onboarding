@@ -9,18 +9,18 @@ import WhatsAppIconImg from 'images/whatsapp-icon.png';
 import AppStoreImg from 'images/download-app-store.png';
 import GooglePlayImg from 'images/download-google-play.png';
 
-export const DownloadApp = ({organizationId}) => {
+export const DownloadApp = ({organizationId, countryCallingCode}) => {
   const [email, setEmail] = useState('');
-  const [number, setNumber] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [isEmailActive, setEmailActive] = useState(false);
-  const [isNumberActive, setNumberActive] = useState(false);
+  const [isPhoneNumberActive, setPhoneNumberActive] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
-  const [showNumberError, setShowNumberError] = useState(false);
+  const [showPhoneNumberError, setShowPhoneNumberError] = useState(false);
   const [showLinks, setShowLinks] = useState(false);
   const [isMobileIOS, setMobileIOS] = useState(false);
   const [isMobileAndroid, setMobileAndroid] = useState(false);  
   const emailRef = useRef(null);
-  const numberRef = useRef(null);
+  const phoneNumberRef = useRef(null);
   
   useEffect(() => {
     if (isIOS) {
@@ -38,7 +38,7 @@ export const DownloadApp = ({organizationId}) => {
           if (type === 'email') {
             setEmailActive(false);
           } else {
-            setNumberActive(false);
+            setPhoneNumberActive(false);
           }
         }
       }
@@ -46,34 +46,34 @@ export const DownloadApp = ({organizationId}) => {
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
       };
-    }, [isEmailActive, isNumberActive]);
+    }, [isEmailActive, isPhoneNumberActive]);
   }  
 
   useClickedOutside(emailRef, 'email');
-  useClickedOutside(numberRef, 'number');
+  useClickedOutside(phoneNumberRef, 'phoneNumber');
 
   const setEmailValue = (value) => {
     setEmail(value);
     setShowEmailError(false);
   }
 
-  const setNumberValue = (value) => {
-    setNumber(value);
-    setShowNumberError(false);
+  const setPhoneNumberValue = (value) => {
+    setPhoneNumber(value);
+    setShowPhoneNumberError(false);
   }
 
   const handleSubmit = () => {
     if (!helpers.validateEmail(email)) {
       setShowEmailError(true);
     }
-    if (!helpers.validatePhoneNumber(number)) {
-      setShowNumberError(true);
+    if (!helpers.validatePhoneNumber(phoneNumber)) {
+      setShowPhoneNumberError(true);
     }
-    if (helpers.validateEmail(email) && helpers.validatePhoneNumber(number)) {
+    if (helpers.validateEmail(email) && helpers.validatePhoneNumber(phoneNumber)) {
       setShowLinks(true);
       const approvedUser = {
         email: email,
-        whatsappNumber: number,
+        phoneNumber: helpers.getPhoneNumberWithCountryCode(phoneNumber, countryCallingCode),
         organization: {
           id: organizationId
         },
@@ -85,7 +85,7 @@ export const DownloadApp = ({organizationId}) => {
   }
 
   const emailInputError = showEmailError ? <InputError>Please enter a valid email address</InputError> : null;
-  const numberInputError = showNumberError ? <InputError >Please enter a valid WhatsApp number</InputError> : null;
+  const phoneNumberInputError = showPhoneNumberError ? <InputError>Please enter a valid WhatsApp phoneNumber</InputError> : null;
   const iOSLink = !isMobileAndroid ? <a href="https://apps.apple.com/us/app/mwb-connect/id1582502052#?platform=iphone" target="_blank" rel="noreferrer">
       <Download src={AppStoreImg} alt="App Store" />
     </a> : null;
@@ -99,7 +99,7 @@ export const DownloadApp = ({organizationId}) => {
   return (
     <div>
       {!showLinks ? <Text>
-        In order to download and sign up in the MWB Connect mobile app, please enter your email address and WhatsApp number:
+        In order to download and sign up in the MWB Connect mobile app, please enter your email address and WhatsApp phoneNumber:
       </Text> : 
       <Text>
         {downloadText}
@@ -121,20 +121,20 @@ export const DownloadApp = ({organizationId}) => {
           </InputContainer>
           {emailInputError}
           <InputSeparator/>
-          <InputContainer isActive={isNumberActive}>
+          <InputContainer isActive={isPhoneNumberActive}>
             <IconContainer>
               <WhatsAppIcon src={WhatsAppIconImg}/>
             </IconContainer>          
             <StyledInput
-              ref={numberRef}
-              name="number"
-              value={number}
-              onChange={e => setNumberValue(e.target.value)} 
-              onClick={e => setNumberActive(true)}
-              placeholder="Your WhatsApp number"
+              ref={phoneNumberRef}
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={e => setPhoneNumberValue(e.target.value)} 
+              onClick={e => setPhoneNumberActive(true)}
+              placeholder="Your WhatsApp phoneNumber"
               isIOS={isMobileIOS}/>  
           </InputContainer>
-          {numberInputError}
+          {phoneNumberInputError}
         </FormWrapper>
       </FormContainer> : null}
       {!showLinks ? <ButtonsContainer>

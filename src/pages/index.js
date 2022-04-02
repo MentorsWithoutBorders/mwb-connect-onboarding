@@ -9,7 +9,8 @@ import { Loader } from '../components/Loader/loader';
 export default class IndexPage extends React.Component {
   state = {
     isMentor: undefined,
-    organizationId: undefined
+    organizationId: undefined,
+    countryCallingCode: undefined
   }
 
   setIsMentor(isMentor) {
@@ -24,9 +25,20 @@ export default class IndexPage extends React.Component {
     });    
   }
 
+  setCountryCallingCode(countryCallingCode) {
+    this.setState({
+      countryCallingCode: countryCallingCode
+    });    
+  }
+
   componentDidMount() {
     const pathname = this.props.location.pathname;
     const isFromOrganization = helpers.getIsFromOrganization(pathname);
+    const getCountryCallingCode = async () => {
+      const countryCallingCode = await apiService.getCountryCallingCode(pathname);
+      this.setCountryCallingCode(countryCallingCode);
+    }
+    getCountryCallingCode();
     if (!isFromOrganization) {
       this.setIsMentor(helpers.getIsMentor(pathname))
     } else {
@@ -36,7 +48,7 @@ export default class IndexPage extends React.Component {
         this.setIsMentor(isMentor);
         this.setOrganizationId(organization.id);
       }
-      getIsMentor();
+      getIsMentor();    
     }
   }
 
@@ -47,7 +59,7 @@ export default class IndexPage extends React.Component {
       case true:
         return <Mentors organizationId={this.state.organizationId} partners={this.props.data.postgres.partners} testimonials={this.props.data.postgres.testimonials}/>; 
       case false:
-        return <Students organizationId={this.state.organizationId}/>;
+        return <Students organizationId={this.state.organizationId} countryCallingCode={this.state.countryCallingCode}/>;
       default:
         return 'foo';
     }

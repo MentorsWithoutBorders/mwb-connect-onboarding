@@ -205,7 +205,7 @@ export class Students extends React.Component {
             </Slide>
             <Slide height={this.state.slidesHeights[this.state.activeStepEnabled]}>
               <Container ref={(downloadApp) => this.downloadApp = downloadApp}>
-                <DownloadApp organizationId={this.props.organizationId}/>
+                <DownloadApp organizationId={this.props.organizationId} countryCallingCode={this.props.countryCallingCode}/>
               </Container> 
             </Slide>
           </Slider>

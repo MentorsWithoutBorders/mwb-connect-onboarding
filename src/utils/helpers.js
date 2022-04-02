@@ -15,6 +15,22 @@ export const validatePhoneNumber = (phoneNumber) => {
     );
 };
 
+export const getPhoneNumberWithCountryCode = (phoneNumber, countryCode) => {
+  let hasCountryCode = false;
+  if (phoneNumber.indexOf('+') === 0 || phoneNumber.indexOf('00') === 0) {
+    hasCountryCode = true;
+  }
+  phoneNumber = parseInt(phoneNumber.replace(/\D/g, ''), 10).toString();
+  if (countryCode) {
+    if (hasCountryCode) {
+      return '+' + phoneNumber.replace(countryCode.substring(1), countryCode.substring(1) + ' ');
+    } else {
+      return countryCode + ' ' + phoneNumber;
+    }
+  }
+  return hasCountryCode ? '+' + phoneNumber : phoneNumber;
+};
+
 export const getIsFromOrganization = (pathname) => {
   return pathname !== '/' && pathname.indexOf('students') < 0 && pathname.indexOf('mentors') < 0;
 };
