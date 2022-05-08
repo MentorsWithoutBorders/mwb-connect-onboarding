@@ -45,7 +45,7 @@ export const Steps = ({activeStep, goToIntroduction, goToProfile, goToTraining, 
         <StepContainer onClick={goToTraining}>
           <OptionContainer>
             <Icon src={activeStep === constants.MENTOR_TRAINING ? TrainingActiveIcon : TrainingInactiveIcon} alt="Training"/>
-            <StepText number='3' text='Training' isActive={activeStep === constants.MENTOR_TRAINING} isShifted={true}/>
+            <StepText number='3' text='Training' isActive={activeStep === constants.MENTOR_TRAINING} />
           </OptionContainer>
           <TrainingArrowContainer>
             <ArrowLine/>

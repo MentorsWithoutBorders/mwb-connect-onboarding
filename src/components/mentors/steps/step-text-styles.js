@@ -4,12 +4,12 @@ export const TextContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  ${({ isShifted }) => isShifted && `
-    padding-left: 5px;
-  `}
   @media only screen and (max-width: 768px) {
     gap: 3px;
-  }   
+    ${({ isShifted }) => isShifted && `
+      padding-left: 5px;
+    `}    
+  }
 `;
 
 export const NumberContainer = styled.div`
