@@ -125,7 +125,7 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
               type="email"
               value={email}
               onChange={e => setEmailValue(e.target.value)} 
-              onClick={e => setEmailActive(true)}
+              onClick={_e => setEmailActive(true)}
               placeholder="Your email address"
               isIOS={isMobileIOS}/>
           </InputContainer>
@@ -140,7 +140,7 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
               name="phoneNumber"
               value={phoneNumber}
               onChange={e => setPhoneNumberValue(e.target.value)} 
-              onClick={e => setPhoneNumberActive(true)}
+              onClick={_e => setPhoneNumberActive(true)}
               placeholder="Your WhatsApp number"
               isIOS={isMobileIOS}/>  
           </InputContainer>

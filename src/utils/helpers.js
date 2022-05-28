@@ -2,7 +2,7 @@ export const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
     .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
 
@@ -17,6 +17,7 @@ export const validatePhoneNumber = (phoneNumber) => {
 
 export const getPhoneNumberWithCountryCode = (phoneNumber, countryCode) => {
   let hasCountryCode = false;
+  phoneNumber = phoneNumber.trim();
   if (phoneNumber.indexOf('+') === 0 || phoneNumber.indexOf('00') === 0) {
     hasCountryCode = true;
   }

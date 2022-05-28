@@ -105,7 +105,7 @@ export const DownloadApp = ({organizationId}) => {
               type="email"
               value={email}
               onChange={e => setEmailValue(e.target.value)} 
-              onClick={e => setEmailActive(true)}
+              onClick={_e => setEmailActive(true)}
               placeholder="Your email address"
               isIOS={isMobileIOS}/>
           </InputContainer>
