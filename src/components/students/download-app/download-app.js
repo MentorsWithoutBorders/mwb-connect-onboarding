@@ -94,7 +94,7 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
   }
 
   const emailInputError = showEmailError ? <InputError>Please enter a valid email address</InputError> : null;
-  const phoneNumberInputError = showPhoneNumberError ? <InputError>Please enter a valid WhatsApp phoneNumber</InputError> : null;
+  const phoneNumberInputError = showPhoneNumberError ? <InputError>Please enter a valid WhatsApp number</InputError> : null;
   const iOSLink = !isMobileAndroid ? <a href="https://apps.apple.com/us/app/mwb-connect/id1582502052#?platform=iphone" target="_blank" rel="noreferrer">
       <Download src={AppStoreImg} alt="App Store" />
     </a> : null;
@@ -108,7 +108,7 @@ export const DownloadApp = ({organizationId, countryCallingCode}) => {
   return (
     <div>
       {!showLinks ? <Text>
-        In order to download and sign up in the MWB Connect mobile app, please enter your email address and WhatsApp phoneNumber:
+        In order to download and sign up in the MWB Connect mobile app, please enter your email address and WhatsApp number:
       </Text> : 
       <Text>
         {downloadText}
